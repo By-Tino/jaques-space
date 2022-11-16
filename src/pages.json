@@ -1,9 +1,19 @@
 {
-	"pages": [
+	"pages": [{
+			"path": "pages/index/home",
+			"style": {}
+		},
+		{
+			"path": "pages/index/navigate",
+			"style": {}
+		},
+		{
+			"path": "pages/index/message",
+			"style": {}
+		},
 		{
 			"path": "pages/index/index",
 			"style": {
-				"navigationBarTitleText": "主页"
 			}
 		}
 	],
@@ -11,6 +21,53 @@
 		"navigationBarTextStyle": "black",
 		"navigationBarTitleText": "jaques space",
 		"navigationBarBackgroundColor": "#fff",
-		"backgroundColor": "#F8F8F8"
+		"backgroundColor": "#F8F8F8",
+		"app-plus": {
+			"titleNView": false;
+		}
+	},
+	"tabBar": {
+		"backgroundColor": "#fff",
+		"color": "#BABBCF",
+		"selectedColor": "#64B9B4",
+		"borderStyle": "#fff",
+		"iconfontSrc": "static/font/iconfont.ttf",
+		"list": [{
+				"pagePath": "pages/index/home",
+				"iconfont": {
+					"text": "\ue7c6",
+					"selectedColor": "#64B9B4",
+					"color": "#BABBCF"
+				},
+				"text": "Home"
+			},
+			{
+				"pagePath": "pages/index/navigate",
+				"iconfont": {
+					"text": "\ue68d",
+					"selectedColor": "#64B9B4",
+					"color": "#BABBCF"
+				},
+				"text": "Navigate"
+			},
+			{
+				"pagePath": "pages/index/message",
+				"iconfont": {
+					"text": "\ue6a1",
+					"selectedColor": "#64B9B4",
+					"color": "#BABBCF"
+				},
+				"text": "Message"
+			},
+			{
+				"pagePath": "pages/index/index",
+				"iconfont": {
+					"text": "\ue788",
+					"selectedColor": "#64B9B4",
+					"color": "#BABBCF"
+				},
+				"text": "Mine"
+			}
+		]
 	}
 }
