@@ -94,7 +94,7 @@
 <style>
 	.main_top {
 		position: relative;
-		padding-top: 40rpx;
+		padding-top: calc(var(--status-bar-height) + 20px);
 		width: 750rpx;
 		height: 490rpx;
 		background: linear-gradient(#64B9B4, #68CAB1);
