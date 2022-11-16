@@ -870,6 +870,11 @@
     estree-walker "^2.0.1"
     picomatch "^2.2.2"
 
+"@types/node@^18.11.9":
+  version "18.11.9"
+  resolved "https://registry.npmmirror.com/@types/node/-/node-18.11.9.tgz#02d013de7058cea16d36168ef2fc653464cfbad4"
+  integrity sha512-CRpX21/kGdzjOpFsZSkcrXMGIBWMGNIHXXBVFSH+ggkftxg+XYP20TESbh+zFvFj3EQOl5byk0HTRn1IL6hbqg==
+
 "@vitejs/plugin-legacy@^2.2.0":
   version "2.3.0"
   resolved "https://registry.npmmirror.com/@vitejs/plugin-legacy/-/plugin-legacy-2.3.0.tgz#43565bcaf0dba53c70b26a1f67797b7c09f9d04e"
