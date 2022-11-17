@@ -1,11 +1,9 @@
 <template>
-	<view class="home">
-		home
-	</view>
+	<view class="home"></view>
 </template>
 
-<script setup lang="ts">
-</script>
-
-<style>
+<style lang="scss" scoped>
+.home {
+	padding-top: var(--status-bar-height);
+}
 </style>

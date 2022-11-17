@@ -1,0 +1,14 @@
+@import "./color.scss";
+
+body {
+  font: 28rpx  / 1 'Courier New', Courier, monospace;
+}
+
+:root {
+  --color-primary: #{$color-primary};
+  --color-info: #{$color-info};
+  --color-warning: #{$color-warning};
+  --color-error: #{$color-error};
+  --color-success: #{$color-success};
+  --text-color: #{$text-color};
+}

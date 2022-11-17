@@ -1,0 +1,67 @@
+@import "@/assets/styles/tino-design-ui/dark.scss";
+@import "@/assets/styles/tino-design-ui/var.module.scss";
+
+$size: normal small large;
+
+@mixin set-tag-size ($fs: 24rpx, $p: 6rpx 8rpx, $br: 6rpx) {
+  font-size: $fs;
+  padding: $p;
+  border-radius: $br;
+}
+
+.#{$prefix}-tag {
+  line-height: 1;
+  overflow: hidden;
+  position: relative;
+  vertical-align: top;
+  display: inline-block;
+  @include set-tag-size();
+  color: var(--tag-text-color, #fff);
+
+  @each $v in $size {
+    &.is-#{$v} {
+      @if $v == small {
+        font-size: 20rpx;
+        padding: 4rpx 8rpx;
+        border-radius: 4rpx;
+        @include set-tag-size(20rpx, 4rpx 8rpx, 4rpx)
+      }
+
+      @else if $v == large {
+        @include set-tag-size(28rpx, 8rpx 10rpx, 8rpx)
+      }
+    }
+  }
+
+  .tino-icon {
+    &.suffix-icon {
+      margin-right: 8rpx;
+    }
+    &.prefix-icon {
+      margin-left: 8rpx;
+    }
+    &.close-icon {
+      position: absolute;
+      top: 0;
+      right: 0;
+      z-index: 1;
+      &:hover {
+        cursor: pointer;
+      }
+    }
+  }
+
+  .closable-box {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 50rpx;
+    height: 50rpx;
+    background-color: rgb(0 0 0 / .15);
+    border-radius: 50%;
+    transform: translate(50%, -50%);
+    &:hover {
+      cursor: pointer;
+    }
+  }
+}

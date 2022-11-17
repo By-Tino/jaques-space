@@ -1,0 +1,33 @@
+@import "@/assets/styles/tino-design-ui/dark.scss";
+@import "@/assets/styles/tino-design-ui/var.module.scss";
+@font-face {
+  font-family: "iconfont"; /* Project id 3777985 */
+  src: url('//at.alicdn.com/t/c/font_3777985_3po44fv8enl.woff2?t=1668695616624') format('woff2'),
+       url('//at.alicdn.com/t/c/font_3777985_3po44fv8enl.woff?t=1668695616624') format('woff'),
+       url('//at.alicdn.com/t/c/font_3777985_3po44fv8enl.ttf?t=1668695616624') format('truetype');
+}
+
+.tino-iconfont {
+  font-family: "iconfont" !important;
+  font-size: 1em;
+  font-style: normal;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.tino-icon-close:before {
+  content: "\e67e";
+}
+
+.tino-icon-like:before {
+  content: "\e8c3";
+}
+
+.tino-icon-user:before {
+  content: "\e788";
+}
+
+.#{$prefix}-icon {
+  color: inherit;
+  display: inline-block;
+}
