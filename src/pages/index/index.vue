@@ -108,11 +108,7 @@
 <style>
 	.main_top {
 		position: relative;
-<<<<<<< HEAD
-		padding-top: calc(var(--status-bar-height) + 20px);
-=======
 		padding-top: calc(var(--status-bar-height) + 40rpx);
->>>>>>> 719bce0 (修改了mine头像不在同一个盒子里，添加了修改名字和To Open新页面，没有解决的时候tabbar遮住背景)
 		width: 750rpx;
 		height: 490rpx;
 		background: linear-gradient(#64B9B4, #68CAB1);

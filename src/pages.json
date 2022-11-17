@@ -14,17 +14,6 @@
 		},
 		{
 			"path": "pages/index/index",
-<<<<<<< HEAD
-			"style": {}
-		}
-	],
-	"globalStyle": {
-		"navigationBarTextStyle": "black",
-		"navigationBarTitleText": "jaques space",
-		"navigationBarBackgroundColor": "#fff",
-		"backgroundColor": "#F8F8F8",
-		"navigationStyle": "custom"
-=======
 			"style": {
 				"app-plus" : {
 					"titleNView": false,
@@ -44,7 +33,6 @@
 	],
 	"globalStyle": {
 		"navigationBarTextStyle": "white"
->>>>>>> 719bce0 (修改了mine头像不在同一个盒子里，添加了修改名字和To Open新页面，没有解决的时候tabbar遮住背景)
 	},
 	"tabBar": {
 		"backgroundColor": "#fff",
