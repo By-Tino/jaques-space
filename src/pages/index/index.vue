@@ -1,26 +1,25 @@
 <template>
 	<view class="main">
 		<view class="main_top">
-
 			<view class="top_name">
-				<text>Jaques Tino</text>
-				<text class="iconfont icon-bianji" @click="Updatename"></text>
-			</view>
-
-			<view class="head_img">
-				<image src="../../images/head_img.jpg"></image>
-			</view>
-
-			<view class="sex_ID">
-				<view class="sex_man">
-					<text class="iconfont icon-xingbie_nan"></text>
-					<text>21</text>
+				<view class="name_left">
+					<text>Jaques Tino</text>
+					<text class="iconfont icon-bianji" @click="Updatename"></text>
+					
+					<view class="sex_ID">
+						<view class="sex_man">
+							<text class="iconfont icon-xingbie_nan"></text>
+							<text>21</text>
+						</view>
+						<view class="ID">
+							<text>ID: 828941260</text>
+						</view>
+					</view>
 				</view>
-				<view class="ID">
-					<text>ID: 828941260</text>
+				<view class="head_img">
+					<image src="../../images/head_img.jpg"></image>
 				</view>
 			</view>
-
 			<view class="title_num">
 				<view>
 					<text style="margin: 0 0 20rpx 60rpx;">58</text>
@@ -39,7 +38,7 @@
 			<view class="footer_title">
 				<text style="font-size: 40rpx;color: #F3CC96;font-weight: 700;margin: 0 20rpx 0 30rpx;">VIP</text>
 				<text style="font-size: 28rpx;color: #E7FEFC;">No member has been opened</text>
-				<button>To Open</button>
+				<button @click="member">To Open</button>
 			</view>
 		</view>
 		<view class="main_center">
@@ -69,7 +68,16 @@
 			</view>
 		</view>
 		
-		<view class="Updatename" v-show="Show.bol"></view>
+		<view class="Updatename" v-if="Show.bol">
+			<view class="popup">
+				<text style="font-size: 40rpx;font-weight: 700;">Update Profile</text>
+				<input type="text" placeholder="Jaqeus Tino">
+				<view class="btn">
+					<button  @click="Show.bol=false">cancel</button>
+					<button>UPDATE</button>
+				</view>
+			</view>
+		</view>
 	</view>
 </template>
 
@@ -89,27 +97,37 @@
 			Show.bol=false
 		}
 	}
+	
+	const member=()=>{
+		uni.navigateTo({
+			url:"/pages/member/member"
+		})
+	}
 </script>
 
 <style>
 	.main_top {
 		position: relative;
+<<<<<<< HEAD
 		padding-top: calc(var(--status-bar-height) + 20px);
+=======
+		padding-top: calc(var(--status-bar-height) + 40rpx);
+>>>>>>> 719bce0 (修改了mine头像不在同一个盒子里，添加了修改名字和To Open新页面，没有解决的时候tabbar遮住背景)
 		width: 750rpx;
 		height: 490rpx;
 		background: linear-gradient(#64B9B4, #68CAB1);
 	}
 
-	.main_top .head_img image {
-		position: absolute;
+	.main_top .top_name .head_img image {
 		width: 160rpx;
 		height: 160rpx;
 		border-radius: 50%;
-		right: 36rpx;
-		top: 40rpx;
+		margin-right: 36rpx;
 	}
-
+	
 	.main_top .top_name {
+		display: flex;
+		justify-content: space-between;
 		font-size: 40rpx;
 		font-weight: 700;
 		color: #fff;
@@ -135,7 +153,7 @@
 		height: 48rpx;
 		background: #7CDAA6;
 		border-radius: 24rpx;
-		margin: 30rpx 0 0 30rpx;
+		margin: 30rpx 0 0 0;
 		font-size: 24rpx;
 		color: #fff;
 	}
@@ -211,8 +229,63 @@
 
 	.main .Updatename{
 		position: fixed;
+		left: 0;
+		top: 0;
 		width: 100vw;
 		height: 100vh;
 		background-color: rgb(0 0 0 / .7);
+	}
+	
+	.main .Updatename .popup{
+		position: absolute;
+		top: 0;
+		right: 0;
+		bottom: 0;
+		left: 0;
+		margin:  auto;
+		width: 600rpx;
+		height: 364rpx;
+		background: #fff;
+		border-radius: 16rpx;
+		padding: 40rpx 0 0 40rpx;
+		box-sizing: border-box;
+	}
+	
+	.main .Updatename .popup input{
+		width: 520rpx;
+		height: 80rpx;
+		margin-top: 40rpx;
+		border: 2rpx solid #efeef3;
+		border-radius: 10rpx;
+		color: #BABBCF;
+		font-size: 24rpx;
+		padding-left: 20rpx;
+		box-sizing: border-box;
+	}
+	
+	.main .Updatename .popup .btn{
+		margin-top: 40rpx;
+	}
+	
+	.main .Updatename .popup .btn button{
+		float: left;
+		width: 160rpx;
+		height: 80rpx;
+		border-radius: 10rpx;
+		font-size: 28rpx;
+	}
+	
+	.main .Updatename .popup .btn button:first-child{
+		border: none;
+		color: #95B1AE;
+		background: #D9E9E2;
+	}
+	
+	.main .Updatename .popup .btn button:last-child{
+		border: none;
+		color: #fff;
+		background: #3EBDA3;
+		margin-left: 40rpx;
+		line-height: 80rpx;
 	}
 </style>
