@@ -24,7 +24,7 @@
       class="close-icon"
       @click="handleClose"
     />
-    <view class="closable-box" @click="handleClose" />
+    <view class="closable-box" @click="handleClose" v-if="closable" />
   </view>
 </template>
 

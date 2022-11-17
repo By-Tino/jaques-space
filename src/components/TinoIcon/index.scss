@@ -2,9 +2,9 @@
 @import "@/assets/styles/tino-design-ui/var.module.scss";
 @font-face {
   font-family: "iconfont"; /* Project id 3777985 */
-  src: url('//at.alicdn.com/t/c/font_3777985_3po44fv8enl.woff2?t=1668695616624') format('woff2'),
-       url('//at.alicdn.com/t/c/font_3777985_3po44fv8enl.woff?t=1668695616624') format('woff'),
-       url('//at.alicdn.com/t/c/font_3777985_3po44fv8enl.ttf?t=1668695616624') format('truetype');
+  src: url('//at.alicdn.com/t/c/font_3777985_3sq6nqfrug7.woff2?t=1668701011973') format('woff2'),
+       url('//at.alicdn.com/t/c/font_3777985_3sq6nqfrug7.woff?t=1668701011973') format('woff'),
+       url('//at.alicdn.com/t/c/font_3777985_3sq6nqfrug7.ttf?t=1668701011973') format('truetype');
 }
 
 .tino-iconfont {
@@ -13,6 +13,14 @@
   font-style: normal;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+}
+
+.tino-icon-right:before {
+  content: "\e6a3";
+}
+
+.tino-icon-left:before {
+  content: "\e952";
 }
 
 .tino-icon-close:before {
