@@ -17,7 +17,7 @@
 					</view>
 				</view>
 				<view class="head_img">
-					<image src="../../images/head_img.jpg"></image>
+					<image src="../../assets/images/head_img.jpg"></image>
 				</view>
 			</view>
 			<view class="title_num">
@@ -42,7 +42,7 @@
 			</view>
 		</view>
 		<view class="main_center">
-			<view>
+			<view  @click="edit">
 				<text>User profile</text>
 				<text class="iconfont icon-youjiantou1"></text>
 			</view>
@@ -101,6 +101,12 @@
 	const member=()=>{
 		uni.navigateTo({
 			url:"/pages/member/member"
+		})
+	}
+	
+	const edit=()=>{
+		uni.navigateTo({
+			url:"/pages/index/Edit"
 		})
 	}
 </script>
@@ -224,12 +230,17 @@
 	}
 
 	.main .Updatename{
+		z-index: 10000;
 		position: fixed;
 		left: 0;
 		top: 0;
 		width: 100vw;
 		height: 100vh;
 		background-color: rgb(0 0 0 / .7);
+	}
+	
+	.uni-tabbar{
+		z-index: 0;
 	}
 	
 	.main .Updatename .popup{

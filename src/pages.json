@@ -1,15 +1,15 @@
 {
 	"pages": [
 		{
-			"path": "pages/index/home",
+			"path": "pages/home/home",
 			"style": {}
 		},
 		{
-			"path": "pages/index/navigate",
+			"path": "pages/navigate/navigate",
 			"style": {}
 		},
 		{
-			"path": "pages/index/message",
+			"path": "pages/message/message",
 			"style": {}
 		},
 		{
@@ -18,6 +18,14 @@
 				"app-plus" : {
 					"titleNView": false
 				}
+			}
+		},
+		{
+			"path": "pages/index/Edit",
+			"style": {
+				"navigationBarTitleText": "Edit Profile",
+				"navigationBarBackgroundColor": "#fff",
+				"navigationBarTextStyle": "black"
 			}
 		},
 		{
@@ -38,7 +46,7 @@
 		"borderStyle": "none",
 		"iconfontSrc": "static/font/iconfont.ttf",
 		"list": [{
-				"pagePath": "pages/index/home",
+				"pagePath": "pages/home/home",
 				"iconfont": {
 					"text": "\ue7c6",
 					"selectedColor": "#64B9B4",
@@ -47,7 +55,7 @@
 				"text": "Home"
 			},
 			{
-				"pagePath": "pages/index/navigate",
+				"pagePath": "pages/navigate/navigate",
 				"iconfont": {
 					"text": "\ue68d",
 					"selectedColor": "#64B9B4",
@@ -56,7 +64,7 @@
 				"text": "Navigate"
 			},
 			{
-				"pagePath": "pages/index/message",
+				"pagePath": "pages/message/message",
 				"iconfont": {
 					"text": "\ue6a1",
 					"selectedColor": "#64B9B4",
