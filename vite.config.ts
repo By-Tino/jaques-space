@@ -16,6 +16,7 @@ export default defineConfig({
       ],
       imports: [
         'vue',
+        'pinia',
         'uni-app'
       ],
       dts: path.resolve(__dirname, './typings/auto-imports.d.ts')
@@ -36,8 +37,8 @@ export default defineConfig({
       scss: {
         additionalData: `
           @import "@/assets/styles/normalize.scss";
-          @import "@/assets/styles/tino-design-ui/index.scss";
-        `
+        `,
+        javascriptEnabled: true
       }
     }
   }

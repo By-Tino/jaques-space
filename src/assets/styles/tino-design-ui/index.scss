@@ -1,14 +1,24 @@
-@import "./color.scss";
+@import 'color';
 
 body {
   font: 28rpx  / 1 'Courier New', Courier, monospace;
 }
 
 :root {
-  --color-primary: #{$color-primary};
   --color-info: #{$color-info};
-  --color-warning: #{$color-warning};
-  --color-error: #{$color-error};
-  --color-success: #{$color-success};
   --text-color: #{$text-color};
+  --color-error: #{$color-error};
+  --color-primary: #{$color-primary};
+  --color-warning: #{$color-warning};
+  --color-success: #{$color-success};
+  --color-info-light: #{$color-info-light};
+  --color-error-light: #{$color-error-light};
+  --color-primary-light: #{$color-primary-light};
+  --color-warning-light: #{$color-warning-light};
+  --color-success-light: #{$color-success-light};
+  --text-color-info-light: #{$text-color-info-light};
+  --text-color-error-light: #{$text-color-error-light};
+  --text-color-primary-light: #{$text-color-primary-light};
+  --text-color-warning-light: #{$text-color-warning-light};
+  --text-color-success-light: #{$text-color-success-light};
 }

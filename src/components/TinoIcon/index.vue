@@ -4,7 +4,7 @@
 
 <script lang="ts" setup>
 
-import cssVars from '@/assets/styles/tino-design-ui/var.module.scss'
+import { useStore } from '@/pinia/config'
 
 interface IconProps {
   // 定义 icon 的名称
@@ -19,9 +19,9 @@ withDefaults(defineProps<IconProps>(), {
   size: 28
 })
 
+const store = useStore()
 const emits = defineEmits(['click'])
-
-const useNamespace = cssVars.prefix + '-icon'
+const useNamespace = computed(() => store.prefix + '-icon')
 
 </script>
 

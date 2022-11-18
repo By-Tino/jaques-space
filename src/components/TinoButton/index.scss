@@ -1,0 +1,78 @@
+@import "@/assets/styles/tino-design-ui/dark.scss";
+@import "@/assets/styles/tino-design-ui/variables.scss";
+
+$size: normal small large;
+
+@mixin set-tag-size ($fs: 24rpx, $p: 6rpx 8rpx, $br: 6rpx) {
+  font-size: $fs;
+  padding: $p;
+  border-radius: $br;
+}
+
+@keyframes rotating {
+  from {
+    transform: scale(1) rotate(0);
+  }
+
+  50% {
+    transform: scale(.8) rotate(180deg);
+  }
+
+  to {
+    transform: scale(1) rotate(360deg);
+  }
+}
+
+.#{$prefix}-button {
+  line-height: 1.5;
+  overflow: hidden;
+  position: relative;
+  display: inline-block;
+  @include set-tag-size();
+  color: var(--tag-text-color, #fff);
+
+  $bg-color-disabled: var(--color-primary-light);
+  $text-color-disabled: var(--text-color-primary-light);
+
+  &:hover {
+    cursor: pointer;
+  }
+
+  &::after {
+    display: none;
+  }
+
+  &[disabled] {
+    cursor: not-allowed;
+    color: var(--text-disabled-color, $text-color-disabled);
+    background-color: var(--bg-color-disabled-color, $bg-color-disabled) !important;
+  }
+
+  .loading {
+    animation: rotating 2s linear infinite;
+  }
+
+  @each $v in $size {
+    &.is-#{$v} {
+      @if $v == small {
+        font-size: 20rpx;
+        padding: 4rpx 8rpx;
+        border-radius: 4rpx;
+        @include set-tag-size(20rpx, 4rpx 8rpx, 4rpx)
+      }
+
+      @else if $v == large {
+        @include set-tag-size(28rpx, 8rpx 10rpx, 8rpx)
+      }
+    }
+  }
+
+  // .tino-icon {
+  //   &.suffix-icon {
+  //     margin-right: 8rpx;
+  //   }
+  //   &.prefix-icon {
+  //     margin-left: 8rpx;
+  //   }
+  // }
+}

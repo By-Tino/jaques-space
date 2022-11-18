@@ -1,5 +1,5 @@
 @import "@/assets/styles/tino-design-ui/dark.scss";
-@import "@/assets/styles/tino-design-ui/var.module.scss";
+@import "@/assets/styles/tino-design-ui/variables.scss";
 
 $size: normal small large;
 
@@ -34,12 +34,12 @@ $size: normal small large;
   }
 
   .tino-icon {
-    &.suffix-icon {
-      margin-right: 8rpx;
-    }
-    &.prefix-icon {
-      margin-left: 8rpx;
-    }
+    // &.suffix-icon {
+    //   margin-right: 8rpx;
+    // }
+    // &.prefix-icon {
+    //   margin-left: 8rpx;
+    // }
     &.close-icon {
       position: absolute;
       top: 0;

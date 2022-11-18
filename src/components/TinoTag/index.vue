@@ -30,7 +30,7 @@
 
 <script lang="ts" setup>
 
-import cssVars from '@/assets/styles/tino-design-ui/var.module.scss'
+import { useStore } from '@/pinia/config'
 
 interface TinoProps {
   // 定义 tag 的背景颜色
@@ -51,9 +51,7 @@ interface TinoProps {
   afterClose?: () => void
 }
 
-const visable = ref(true)
 const emits = defineEmits(['update:visable'])
-
 const props = withDefaults(defineProps<TinoProps>(), {
   type: 'primary',
   size: 'normal',
@@ -63,7 +61,9 @@ const props = withDefaults(defineProps<TinoProps>(), {
   afterClose: () => undefined
 })
 
-const useNamespace = cssVars.prefix + '-tag'
+const store = useStore()
+const visable = ref(true)
+const useNamespace = computed(() => store.prefix + '-tag')
 const useSize = computed(() => props.size !== 'normal' ? `is-${props.size}` : '')
 const useBackgroundColor = computed(() => {
   if (props.color) return props.color
