@@ -1,5 +1,7 @@
 <template>
-	<view class="home"></view>
+	<view class="home">
+		<tino-button type="error" disabled>click</tino-button>
+	</view>
 </template>
 
 <style lang="scss" scoped>

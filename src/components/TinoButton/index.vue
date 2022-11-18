@@ -3,7 +3,9 @@
     @click="emits('click')"
     :class="[ useNamespace, useSize ]"
     :style="{
-      backgroundColor: useBackgroundColor
+      backgroundColor: useBackgroundColor,
+      '--text-disabled-color': `var(--text-color-${props.type}-light)`,
+      '--bg-color-disabled-color': `var(--color-${props.type}-light)`
     }"
   >
     <tino-icon name="loading" class="loading" v-if="loading" />
