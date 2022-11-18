@@ -1,12 +1,12 @@
 <template>
   <button
-    @click="emits('click')"
-    :class="[ useNamespace, useSize ]"
+    :disabled="disabled"
+    :class="[ useNamespace, useSize, useTheme ]"
     :style="{
-      backgroundColor: useBackgroundColor,
-      '--text-disabled-color': `var(--text-color-${props.type}-light)`,
-      '--bg-color-disabled-color': `var(--color-${props.type}-light)`
+      borderWidth: border ? '2rpx' : '0',
+      ...useColor(store.prefix, 'button', color || '', disabled).value
     }"
+    @click="emits('click')"
   >
     <tino-icon name="loading" class="loading" v-if="loading" />
     <!-- 自定义前置图标 -->
@@ -23,37 +23,42 @@
 
 <script lang="ts" setup>
 
+import { useColor } from '@/hooks'
 import { useStore } from '@/pinia/config'
+import type { ButtonTypes, ButtonSize } from '@/typings'
 
 interface TinoProps {
-  // 定义 tag 的背景颜色
+  // 定义 button 的背景颜色
   color?: string
-  // 定义 tag 的主题
-  type?: 'primary' | 'success' | 'error' | 'warning' | 'info'
-  // 定义 tag 的大小
-  size?: 'normal' | 'large' | 'small'
+  // 定义 button 的主题
+  type?: ButtonTypes
+  // 定义 button 的大小
+  size?: ButtonSize
   // 定义前置 icon 的类名
   suffixIcon?: string
   // 定义后置 icon 的类名
   prefixIcon?: string
   // 是否显示加载图标
   loading?: boolean
+  // 是否显示 button 的边框
+  border?: boolean
+  // 是否禁用按钮
+  disabled?: boolean
 }
 
 const props = withDefaults(defineProps<TinoProps>(), {
-  type: 'primary',
-  size: 'normal',
-  loading: false
+  type: 'default',
+  size: 'default',
+  loading: false,
+  border: true,
+  disabled: false
 })
 
 const store = useStore()
 const emits = defineEmits(['click'])
 const useNamespace = computed(() => store.prefix + '-button')
-const useSize = computed(() => props.size !== 'normal' ? `is-${props.size}` : '')
-const useBackgroundColor = computed(() => {
-  if (props.color) return props.color
-  if (props.type) return `var(--color-${props.type})`
-})
+const useSize = computed(() => props.size !== 'default' ? `is-${props.size}` : '')
+const useTheme = computed(() => `${store.prefix}-button--${props.type}`)
 
 </script>
 

@@ -2,9 +2,9 @@
   <view
     :style="{
       paddingRight: closable ? '28rpx' : '',
-      backgroundColor: useBackgroundColor
+      ...useColor(store.prefix, 'tag', color || '', false).value
     }"
-    :class="[ useNamespace, useSize ]"
+    :class="[ useNamespace, useSize, useTheme, `is-${effect}` ]"
     v-show="visable"
   >
     <!-- 自定义前置图标 -->
@@ -30,15 +30,17 @@
 
 <script lang="ts" setup>
 
+import { useColor } from '@/hooks'
 import { useStore } from '@/pinia/config'
+import type { TagSize, TagTypes, DefineEffect } from '@/typings'
 
 interface TinoProps {
-  // 定义 tag 的背景颜色
+  // 定义 tag 的背景颜色，层级最高，设置后 effect 和 type 设置的属性值将无效
   color?: string
   // 定义 tag 的主题
-  type?: 'primary' | 'success' | 'error' | 'warning' | 'info'
+  type?: TagTypes
   // 定义 tag 的大小
-  size?: 'normal' | 'large' | 'small'
+  size?: TagSize
   // 定义前置 icon 的类名
   suffixIcon?: string
   // 定义后置 icon 的类名
@@ -49,14 +51,17 @@ interface TinoProps {
   beforeClose?: (close: Function) => boolean
   // 关闭 tag 之后的钩子
   afterClose?: () => void
+  // 定义 tag 主题
+  effect?: DefineEffect
 }
 
 const emits = defineEmits(['update:visable'])
 const props = withDefaults(defineProps<TinoProps>(), {
   type: 'primary',
-  size: 'normal',
+  size: 'default',
   closable: false,
   visable: true,
+  effect: 'dark',
   beforeClose: () => true,
   afterClose: () => undefined
 })
@@ -64,11 +69,8 @@ const props = withDefaults(defineProps<TinoProps>(), {
 const store = useStore()
 const visable = ref(true)
 const useNamespace = computed(() => store.prefix + '-tag')
-const useSize = computed(() => props.size !== 'normal' ? `is-${props.size}` : '')
-const useBackgroundColor = computed(() => {
-  if (props.color) return props.color
-  if (props.type) return `var(--color-${props.type})`
-})
+const useTheme = computed(() => `${store.prefix}-tag--${props.type}`)
+const useSize = computed(() => props.size !== 'default' ? `is-${props.size}` : '')
 
 // 关闭 tag
 const close = () => {

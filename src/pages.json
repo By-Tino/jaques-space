@@ -1,43 +1,28 @@
 {
 	"pages": [
 		{
-			"path": "pages/home/home",
-			"style": {}
+			"path": "pages/home/index"
 		},
 		{
-			"path": "pages/navigate/navigate",
-			"style": {}
+			"path": "pages/navigate/index"
 		},
 		{
-			"path": "pages/message/message",
-			"style": {}
+			"path": "pages/message/index"
 		},
 		{
-			"path": "pages/index/index",
-			"style": {
-				"app-plus" : {
-					"titleNView": false
-				}
-			}
+			"path": "pages/mine/index"
 		},
 		{
-			"path": "pages/index/Edit",
-			"style": {
-				"navigationBarTitleText": "Edit Profile",
-				"navigationBarBackgroundColor": "#fff",
-				"navigationBarTextStyle": "black"
-			}
+			"path": "pages/mine/edit"
 		},
 		{
-			"path": "pages/member/member",
-			"style": {
-				"navigationBarTitleText": "Payment",
-				"navigationBarBackgroundColor": "#202639"
-			}
+			"path": "pages/member/index"
 		}
 	],
 	"globalStyle": {
-		"navigationBarTextStyle": "white"
+		"app-plus" : {
+			"titleNView": false
+		}
 	},
 	"tabBar": {
 		"backgroundColor": "#fff",
@@ -46,7 +31,7 @@
 		"borderStyle": "none",
 		"iconfontSrc": "static/font/iconfont.ttf",
 		"list": [{
-				"pagePath": "pages/home/home",
+				"pagePath": "pages/home/index",
 				"iconfont": {
 					"text": "\ue7c6",
 					"selectedColor": "#64B9B4",
@@ -55,7 +40,7 @@
 				"text": "Home"
 			},
 			{
-				"pagePath": "pages/navigate/navigate",
+				"pagePath": "pages/navigate/index",
 				"iconfont": {
 					"text": "\ue68d",
 					"selectedColor": "#64B9B4",
@@ -64,7 +49,7 @@
 				"text": "Navigate"
 			},
 			{
-				"pagePath": "pages/message/message",
+				"pagePath": "pages/message/index",
 				"iconfont": {
 					"text": "\ue6a1",
 					"selectedColor": "#64B9B4",
@@ -73,7 +58,7 @@
 				"text": "Message"
 			},
 			{
-				"pagePath": "pages/index/index",
+				"pagePath": "pages/mine/index",
 				"iconfont": {
 					"text": "\ue788",
 					"selectedColor": "#64B9B4",

@@ -28,24 +28,54 @@ $size: normal small large;
   overflow: hidden;
   position: relative;
   display: inline-block;
+  border: var(--tino-border);
+  font-size: var(--tino-font-size-base);
+  color: var(--tino-button-text-color);
+  border-color: var(--tino-button-border-color);
+  border-radius: var(--tino-border-radius-base);
+  background-color: var(--tino-button-bg-color);
   @include set-tag-size();
-  color: var(--tag-text-color, #fff);
-
-  $bg-color-disabled: var(--color-primary-light);
-  $text-color-disabled: var(--text-color-primary-light);
+  --tino-button-font-weight: var(--tino-font-weight-primary);
+  --tino-button-border-color: var(--tino-border-color);
+  --tino-button-bg-color: var(--tino-fill-color-blank);
+  --tino-button-text-color: var(--tino-text-color-regular);
+  --tino-button-disabled-text-color: var(--tino-disabled-text-color);
+  --tino-button-disabled-bg-color: var(--tino-fill-color-blank);
+  --tino-button-disabled-border-color: var(--tino-border-color-light);
+  --tino-button-divide-border-color: rgba(255, 255, 255, .5);
+  --tino-button-hover-text-color: var(--tino-color-primary);
+  --tino-button-hover-bg-color: var(--tino-color-primary-light-9);
+  --tino-button-hover-border-color: var(--tino-color-primary-light-7);
+  --tino-button-active-text-color: var(--tino-button-hover-text-color);
+  --tino-button-active-border-color: var(--tino-color-primary);
+  --tino-button-active-bg-color: var(--tino-button-hover-bg-color);
+  --tino-button-outline-color: var(--tino-color-primary-light-5);
+  --tino-button-hover-link-text-color: var(--tino-color-info);
+  --tino-button-active-color: var(--tino-text-color-primary);
 
   &:hover {
     cursor: pointer;
   }
 
-  &::after {
-    display: none;
+  &:hover,
+  &:focus {
+    outline: none;
+    color: var(--tino-button-hover-text-color);
+    border-color: var(--tino-button-hover-border-color);
+    background-color: var(--tino-button-hover-bg-color);
   }
 
-  &[disabled] {
+  &[disabled],
+  &[disabled]:hover {
+    color: var(--tino-button-disabled-text-color);
     cursor: not-allowed;
-    color: var(--text-disabled-color, $text-color-disabled);
-    background-color: var(--bg-color-disabled-color, $bg-color-disabled) !important;
+    background-image: none;
+    background-color: var(--tino-button-disabled-bg-color);
+    border-color: var(--tino-button-disabled-border-color);
+  }
+
+  &::after {
+    display: none;
   }
 
   .loading {
@@ -54,25 +84,101 @@ $size: normal small large;
 
   @each $v in $size {
     &.is-#{$v} {
-      @if $v == small {
+      @if $v ==small {
         font-size: 20rpx;
         padding: 4rpx 8rpx;
         border-radius: 4rpx;
         @include set-tag-size(20rpx, 4rpx 8rpx, 4rpx)
       }
 
-      @else if $v == large {
+      @else if $v ==large {
         @include set-tag-size(28rpx, 8rpx 10rpx, 8rpx)
       }
     }
   }
 
-  // .tino-icon {
-  //   &.suffix-icon {
-  //     margin-right: 8rpx;
-  //   }
-  //   &.prefix-icon {
-  //     margin-left: 8rpx;
-  //   }
-  // }
+  &.#{$prefix}-button--info {
+    --tino-button-text-color: var(--tino-color-white);
+    --tino-button-bg-color: var(--tino-color-info);
+    --tino-button-border-color: var(--tino-color-info);
+    --tino-button-outline-color: var(--tino-color-info-light-5);
+    --tino-button-active-color: var(--tino-color-info-dark-2);
+    --tino-button-hover-text-color: var(--tino-color-white);
+    --tino-button-hover-link-text-color: var(--tino-color-info-light-5);
+    --tino-button-hover-bg-color: var(--tino-color-info-light-3);
+    --tino-button-hover-border-color: var(--tino-color-info-light-3);
+    --tino-button-active-bg-color: var(--tino-color-info-dark-2);
+    --tino-button-active-border-color: var(--tino-color-info-dark-2);
+    --tino-button-disabled-text-color: var(--tino-color-white);
+    --tino-button-disabled-bg-color: var(--tino-color-info-light-5);
+    --tino-button-disabled-border-color: var(--tino-color-info-light-5);
+  }
+
+  &.#{$prefix}-button--primary {
+    --tino-button-text-color: var(--tino-color-white);
+    --tino-button-bg-color: var(--tino-color-primary);
+    --tino-button-border-color: var(--tino-color-primary);
+    --tino-button-outline-color: var(--tino-color-primary-light-5);
+    --tino-button-active-color: var(--tino-color-primary-dark-2);
+    --tino-button-hover-text-color: var(--tino-color-white);
+    --tino-button-hover-link-text-color: var(--tino-color-primary-light-5);
+    --tino-button-hover-bg-color: var(--tino-color-primary-light-3);
+    --tino-button-hover-border-color: var(--tino-color-primary-light-3);
+    --tino-button-active-bg-color: var(--tino-color-primary-dark-2);
+    --tino-button-active-border-color: var(--tino-color-primary-dark-2);
+    --tino-button-disabled-text-color: var(--tino-color-white);
+    --tino-button-disabled-bg-color: var(--tino-color-primary-light-5);
+    --tino-button-disabled-border-color: var(--tino-color-primary-light-5);
+  }
+
+  &.#{$prefix}-button--success {
+    --tino-button-text-color: var(--tino-color-white);
+    --tino-button-bg-color: var(--tino-color-success);
+    --tino-button-border-color: var(--tino-color-success);
+    --tino-button-outline-color: var(--tino-color-success-light-5);
+    --tino-button-active-color: var(--tino-color-success-dark-2);
+    --tino-button-hover-text-color: var(--tino-color-white);
+    --tino-button-hover-link-text-color: var(--tino-color-success-light-5);
+    --tino-button-hover-bg-color: var(--tino-color-success-light-3);
+    --tino-button-hover-border-color: var(--tino-color-success-light-3);
+    --tino-button-active-bg-color: var(--tino-color-success-dark-2);
+    --tino-button-active-border-color: var(--tino-color-success-dark-2);
+    --tino-button-disabled-text-color: var(--tino-color-white);
+    --tino-button-disabled-bg-color: var(--tino-color-success-light-5);
+    --tino-button-disabled-border-color: var(--tino-color-success-light-5);
+  }
+
+  &.#{$prefix}-button--warning {
+    --tino-button-text-color: var(--tino-color-white);
+    --tino-button-bg-color: var(--tino-color-warning);
+    --tino-button-border-color: var(--tino-color-warning);
+    --tino-button-outline-color: var(--tino-color-warning-light-5);
+    --tino-button-active-color: var(--tino-color-warning-dark-2);
+    --tino-button-hover-text-color: var(--tino-color-white);
+    --tino-button-hover-link-text-color: var(--tino-color-warning-light-5);
+    --tino-button-hover-bg-color: var(--tino-color-warning-light-3);
+    --tino-button-hover-border-color: var(--tino-color-warning-light-3);
+    --tino-button-active-bg-color: var(--tino-color-warning-dark-2);
+    --tino-button-active-border-color: var(--tino-color-warning-dark-2);
+    --tino-button-disabled-text-color: var(--tino-color-white);
+    --tino-button-disabled-bg-color: var(--tino-color-warning-light-5);
+    --tino-button-disabled-border-color: var(--tino-color-warning-light-5);
+  }
+
+  &.#{$prefix}-button--error {
+    --tino-button-text-color: var(--tino-color-white);
+    --tino-button-bg-color: var(--tino-color-danger);
+    --tino-button-border-color: var(--tino-color-danger);
+    --tino-button-outline-color: var(--tino-color-danger-light-5);
+    --tino-button-active-color: var(--tino-color-danger-dark-2);
+    --tino-button-hover-text-color: var(--tino-color-white);
+    --tino-button-hover-link-text-color: var(--tino-color-danger-light-5);
+    --tino-button-hover-bg-color: var(--tino-color-danger-light-3);
+    --tino-button-hover-border-color: var(--tino-color-danger-light-3);
+    --tino-button-active-bg-color: var(--tino-color-danger-dark-2);
+    --tino-button-active-border-color: var(--tino-color-danger-dark-2);
+    --tino-button-disabled-text-color: var(--tino-color-white);
+    --tino-button-disabled-bg-color: var(--tino-color-danger-light-5);
+    --tino-button-disabled-border-color: var(--tino-color-danger-light-5);
+  }
 }
