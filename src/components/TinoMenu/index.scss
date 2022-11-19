@@ -1,0 +1,21 @@
+.#{$prefix}-menu {
+  width: 100%;
+  display: flex;
+  flex-wrap: nowrap;
+
+  &.is-horizontal {
+    flex-direction: row;
+
+    :deep(.#{$prefix}-menu-item) {
+      display: flex;
+      align-items: center;
+      flex-direction: column;
+      justify-content: center;
+      line-height: 1.5;
+    }
+  }
+
+  &.is-vertical {
+    flex-direction: column;
+  }
+}

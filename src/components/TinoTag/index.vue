@@ -48,7 +48,7 @@ interface TinoProps {
   // 是否允许 tag 可关闭
   closable?: boolean
   // 关闭 tag 之前的钩子，返回 true 或者调用 close 方法则表示关闭 tag
-  beforeClose?: (close: Function) => boolean
+  beforeClose?: (close: Function) => boolean | undefined
   // 关闭 tag 之后的钩子
   afterClose?: () => void
   // 定义 tag 主题

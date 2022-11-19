@@ -1,6 +1,3 @@
-@import "@/assets/styles/tino-design-ui/dark.scss";
-@import "@/assets/styles/tino-design-ui/variables.scss";
-
 $size: normal small large;
 
 @mixin set-tag-size ($fs: 24rpx, $p: 6rpx 8rpx, $br: 6rpx) {

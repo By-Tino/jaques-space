@@ -1,0 +1,29 @@
+@mixin define-position ($mode: absolute, $p: center) {
+  position: $mode;
+
+  @if $p == center {
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+
+  @else if $p == lt {
+    left: 0;
+    top: 0;
+  }
+
+  @else if $p == lb {
+    left: 0;
+    bottom: 0;
+  }
+
+  @else if $p == rt {
+    top: 0;
+    right: 0;
+  }
+
+  @else if $p == rb {
+    right: 0;
+    bottom: 0;
+  }
+}

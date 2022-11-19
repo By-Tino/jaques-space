@@ -23,49 +23,5 @@
 		"app-plus" : {
 			"titleNView": false
 		}
-	},
-	"tabBar": {
-		"backgroundColor": "#fff",
-		"color": "#BABBCF",
-		"selectedColor": "#64B9B4",
-		"borderStyle": "none",
-		"iconfontSrc": "static/font/iconfont.ttf",
-		"list": [{
-				"pagePath": "pages/home/index",
-				"iconfont": {
-					"text": "\ue7c6",
-					"selectedColor": "#64B9B4",
-					"color": "#BABBCF"
-				},
-				"text": "Home"
-			},
-			{
-				"pagePath": "pages/navigate/index",
-				"iconfont": {
-					"text": "\ue68d",
-					"selectedColor": "#64B9B4",
-					"color": "#BABBCF"
-				},
-				"text": "Navigate"
-			},
-			{
-				"pagePath": "pages/message/index",
-				"iconfont": {
-					"text": "\ue6a1",
-					"selectedColor": "#64B9B4",
-					"color": "#BABBCF"
-				},
-				"text": "Message"
-			},
-			{
-				"pagePath": "pages/mine/index",
-				"iconfont": {
-					"text": "\ue788",
-					"selectedColor": "#64B9B4",
-					"color": "#BABBCF"
-				},
-				"text": "Mine"
-			}
-		]
 	}
 }

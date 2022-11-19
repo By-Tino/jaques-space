@@ -1,11 +1,15 @@
 <template>
-	<view class="home">
-		<tino-tag color="#626aef" effect="plain" closable>标签</tino-tag>
-	</view>
+	<LayoutMain namespace="home">
+		<tino-tag suffix-icon="user">21</tino-tag>
+	</LayoutMain>
 </template>
 
+<script lang="ts" setup>
+
+import LayoutMain from '@/layout/main/index.vue'
+
+</script>
+
 <style lang="scss" scoped>
-.home {
-	padding-top: var(--status-bar-height);
-}
+@import 'index';
 </style>

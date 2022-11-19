@@ -1,5 +1,5 @@
 <template>
-  <text :class="[ useNamespace, 'tino-iconfont', `tino-icon-${name}` ]" :style="{ fontSize: size + 'rpx', color }" @click="emits('click')" />
+  <text :class="[ useNamespace, `${store.prefix}-iconfont`, `tino-icon-${name}` ]" :style="{ fontSize: size + 'rpx', color }" @click="emits('click')" />
 </template>
 
 <script lang="ts" setup>

@@ -36,7 +36,10 @@ export default defineConfig({
     preprocessorOptions: {
       scss: {
         additionalData: `
+          @import "@/assets/styles/mixin.scss";
           @import "@/assets/styles/normalize.scss";
+          @import "@/assets/styles/tino-design-ui/dark.scss";
+          @import "@/assets/styles/tino-design-ui/variables.scss";
         `,
         javascriptEnabled: true
       }
