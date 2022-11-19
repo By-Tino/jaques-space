@@ -4,8 +4,7 @@
 			<view class="top_name">
 				<view class="name_left">
 					<text>Jaques Tino</text>
-					<text class="iconfont icon-bianji" @click="Updatename"></text>
-					
+					<tino-icon class="tino-icon-bianji" @click="Updatename"></tino-icon>
 					<view class="sex_ID">
 						<view class="sex_man">
 							<text class="iconfont icon-xingbie_nan"></text>
@@ -36,35 +35,41 @@
 			</view>
 
 			<view class="footer_title">
-				<text style="font-size: 40rpx;color: #F3CC96;font-weight: 700;margin: 0 20rpx 0 30rpx;">VIP</text>
-				<text style="font-size: 28rpx;color: #E7FEFC;">No member has been opened</text>
-				<button @click="member">To Open</button>
+				<view>
+					<text style="font-size: 40rpx;color: #F3CC96;font-weight: 700;margin-left: 30rpx;">VIP</text>
+				</view>
+				<view>
+					<text style="font-size: 28rpx;color: #E7FEFC;">No member has been opened</text>
+				</view>
+				<view>
+					<tino-button @click="member">To Open</tino-button>
+				</view>
 			</view>
 		</view>
 		<view class="main_center">
 			<view  @click="edit">
 				<text>User profile</text>
-				<text class="iconfont icon-youjiantou1"></text>
+				<tino-icon class="tino-icon-right"></tino-icon>
 			</view>
 			<view>
 				<text>CV online</text>
-				<text class="iconfont icon-youjiantou1"></text>
+				<tino-icon class="tino-icon-right"></tino-icon>
 			</view>
 			<view>
 				<text>List of articles</text>
-				<text class="iconfont icon-youjiantou1"></text>
+				<tino-icon class="tino-icon-right"></tino-icon>
 			</view>
 			<view>
 				<text>Operation setup</text>
-				<text class="iconfont icon-youjiantou1"></text>
+				<tino-icon class="tino-icon-right"></tino-icon>
 			</view>
 			<view>
 				<text>My store</text>
-				<text class="iconfont icon-youjiantou1"></text>
+				<tino-icon class="tino-icon-right"></tino-icon>
 			</view>
 			<view>
 				<text>Log out</text>
-				<text class="iconfont icon-youjiantou1"></text>
+				<tino-icon class="tino-icon-right"></tino-icon>
 			</view>
 		</view>
 		
@@ -73,8 +78,8 @@
 				<text style="font-size: 40rpx;font-weight: 700;">Update Profile</text>
 				<input type="text" placeholder="Jaqeus Tino">
 				<view class="btn">
-					<button  @click="Show.bol=false">cancel</button>
-					<button>UPDATE</button>
+					<tino-button  @click="Show.bol=false">cancel</tino-button>
+					<tino-button>UPDATE</tino-button>
 				</view>
 			</view>
 		</view>
@@ -100,7 +105,7 @@
 	
 	const member=()=>{
 		uni.navigateTo({
-			url:"/pages/member/member"
+			url:"/pages/member/index"
 		})
 	}
 	
@@ -136,8 +141,7 @@
 		margin-left: 30rpx;
 	}
 
-	.main_top .top_name .icon-bianji {
-		font-size: 40rpx;
+	.main_top .top_name .tino-icon-bianji {
 		margin-left: 17.76rpx;
 	}
 
@@ -200,13 +204,12 @@
 	}
 
 	.main_top .footer_title button {
-		width: 160rpx;
-		height: 60rpx;
+		padding: 8rpx 30rpx;
 		background: #3EBDA3;
-		border-radius: 10rpx;
 		font-size: 28rpx;
+		border-radius: 10rpx;
 		color: #FFFFFF;
-		line-height: 60rpx;
+		border: none;
 	}
 
 	.main .main_center view {
@@ -276,13 +279,12 @@
 	
 	.main .Updatename .popup .btn button{
 		float: left;
-		width: 160rpx;
-		height: 80rpx;
 		border-radius: 10rpx;
 		font-size: 28rpx;
 	}
 	
 	.main .Updatename .popup .btn button:first-child{
+		padding: 28rpx 42rpx;
 		border: none;
 		color: #95B1AE;
 		background: #D9E9E2;
@@ -291,8 +293,8 @@
 	.main .Updatename .popup .btn button:last-child{
 		border: none;
 		color: #fff;
+		padding: 28rpx 32rpx;
 		background: #3EBDA3;
 		margin-left: 40rpx;
-		line-height: 80rpx;
 	}
 </style>

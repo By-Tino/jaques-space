@@ -2,9 +2,9 @@
 @import "@/assets/styles/tino-design-ui/variables.scss";
 @font-face {
   font-family: "iconfont"; /* Project id 3777985 */
-  src: url('//at.alicdn.com/t/c/font_3777985_glg3xntympt.woff2?t=1668755033381') format('woff2'),
-       url('//at.alicdn.com/t/c/font_3777985_glg3xntympt.woff?t=1668755033381') format('woff'),
-       url('//at.alicdn.com/t/c/font_3777985_glg3xntympt.ttf?t=1668755033381') format('truetype');
+  src: url('//at.alicdn.com/t/c/font_3777985_glg3xntympt.woff2?t=1668849387407') format('woff2'),
+       url('//at.alicdn.com/t/c/font_3777985_glg3xntympt.woff?t=1668849387407') format('woff'),
+       url('//at.alicdn.com/t/c/font_3777985_glg3xntympt.ttf?t=1668849387407') format('truetype');
 }
 
 .tino-iconfont {
@@ -13,6 +13,46 @@
   font-style: normal;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+}
+
+.tino-icon-licai:before {
+  content: "\e600";
+}
+
+.tino-icon-wenzhangliebiaoxiangqing:before {
+  content: "\e665";
+}
+
+.tino-icon-tongxingbie:before {
+  content: "\e619";
+}
+
+.tino-icon-xiangji:before {
+  content: "\e8c7";
+}
+
+.tino-icon-meiyuan:before {
+  content: "\e6dd";
+}
+
+.tino-icon-bianji:before {
+  content: "\e601";
+}
+
+.tino-icon-message:before {
+  content: "\e628";
+}
+
+.tino-icon-navigate:before {
+  content: "\e7be";
+}
+
+.tino-icon-home:before {
+  content: "\e674";
+}
+
+.tino-icon-mine:before {
+  content: "\e60c";
 }
 
 .tino-icon-loading:before {
@@ -31,11 +71,11 @@
   content: "\e67e";
 }
 
-.tino-icon-like:before {
+.tino-icon-dianzan:before {
   content: "\e8c3";
 }
 
-.tino-icon-user:before {
+.tino-icon-yonghu:before {
   content: "\e788";
 }
 
