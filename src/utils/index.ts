@@ -18,3 +18,13 @@ export const SEND_SMS = (phones: string[], message: string) => {
 }
 
 // #endif
+
+// 获取数据的类型
+export const GET_TYPE = (data: any) => {
+  let type: string = typeof data
+  if (type === 'object') type = Object.prototype.toString.call(data).replace(/^\[object (\S+)\]$/, '$1').toLowerCase()
+  return type
+}
+
+// 获取合法的css单位值
+export const VALID_CSS_VALUE = (value: number | string) => typeof value === 'number' ? value + 'rpx' : value

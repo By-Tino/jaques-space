@@ -35,5 +35,15 @@
     &.#{$prefix}-input__wrapper_focus {
       border: 4rpx solid var(--tino-input-focus-border-color);
     }
+
+    &.#{$prefix}-input__wrapper_error {
+      border: 4rpx solid #DA3F70;
+    }
+  }
+
+  .#{$prefix}-input__error {
+    line-height: 60rpx;
+    color: #DA3F70;
+    font-size: 1rem;
   }
 }

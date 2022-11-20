@@ -1,7 +1,7 @@
 <template>
   <button
     :disabled="disabled"
-    :class="[ useNamespace, useSize, useTheme ]"
+    :class="[ namespace, useSize, useTheme ]"
     :style="{
       borderWidth: border ? '2rpx' : '0',
       ...useColor(store.prefix, 'button', color || '', disabled).value
@@ -24,6 +24,7 @@
 <script lang="ts" setup>
 
 import { useColor } from '@/hooks'
+import { useNamespace } from '@/hooks'
 import { useStore } from '@/pinia/config'
 import type { ButtonTypes, ButtonSize } from '@/typings'
 
@@ -56,9 +57,9 @@ const props = withDefaults(defineProps<TinoProps>(), {
 
 const store = useStore()
 const emits = defineEmits(['click'])
-const useNamespace = computed(() => store.prefix + '-button')
+const namespace = useNamespace('button')
 const useSize = computed(() => props.size !== 'default' ? `is-${props.size}` : '')
-const useTheme = computed(() => `${store.prefix}-button--${props.type}`)
+const useTheme = computed(() => `${namespace.value}--${props.type}`)
 
 </script>
 

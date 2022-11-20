@@ -37,9 +37,15 @@ export interface FormRules {
   // 最大值
   max?: number
   // 错误提示信息
-  message?: string
+  message: string
   // 触发规则校验的时机
   trigger?: TriggerMethods | TriggerMethods[]
   // 自定义校验
-  validator?: (value: string, callback: Promise<string | void>) => Promise<string | void>
+  validator?: (value: string, callback: Function) => Promise<boolean>
 }
+
+// 定义位置
+export type Position = 'top' | 'left' | 'center' | 'right'
+
+// 排列方式
+export type Alignment = 'horizontal' | 'vertical'

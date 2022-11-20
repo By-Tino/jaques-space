@@ -1,8 +1,8 @@
 <template>
   <view
-    :class="[ useNamespace, `is-${direction}` ]"
-    :style="{ height: useHeight }"
     :active="active"
+    :style="{ height: useHeight }"
+    :class="[ namespace, `is-${direction}` ]"
   >
     <slot />
   </view>
@@ -10,11 +10,12 @@
 
 <script lang="ts" setup>
 
-import { useStore } from '@/pinia/config'
+import { useNamespace } from '@/hooks'
+import type { Alignment } from '@/typings'
 
 interface MenuProps {
   // menu 的布局方向
-  direction?: 'horizontal' | 'vertical'
+  direction?: Alignment
   // menu 的高度
   height?: number | string
   // 当前活跃状态下的菜单项
@@ -32,9 +33,8 @@ const props = withDefaults(defineProps<MenuProps>(), {
   direction: 'horizontal'
 })
 
-const store = useStore()
+const namespace = useNamespace('menu')
 const useHeight = computed(() => typeof props.height === 'number' ? props.height + 'rpx' : props.height)
-const useNamespace = store.prefix + '-menu'
 
 </script>
 

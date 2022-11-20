@@ -12,10 +12,13 @@ declare module '@vue/runtime-core' {
     TinoAvatar: typeof import('./src/components/TinoAvatar/index.vue')['default']
     TinoButton: typeof import('./src/components/TinoButton/index.vue')['default']
     TinoDialog: typeof import('./src/components/TinoDialog/index.vue')['default']
+    TinoForm: typeof import('./src/components/TinoForm/index.vue')['default']
+    TinoFormItem: typeof import('./src/components/TinoFormItem/index.vue')['default']
     TinoIcon: typeof import('./src/components/TinoIcon/index.vue')['default']
     TinoInput: typeof import('./src/components/TinoInput/index.vue')['default']
     TinoMenu: typeof import('./src/components/TinoMenu/index.vue')['default']
     TinoMenuItem: typeof import('./src/components/TinoMenuItem/index.vue')['default']
+    TinoStatusBar: typeof import('./src/components/TinoStatusBar/index.vue')['default']
     TinoTag: typeof import('./src/components/TinoTag/index.vue')['default']
   }
 }

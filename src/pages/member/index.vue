@@ -7,13 +7,15 @@
 		</view>
 		<view class="payment_center">
 			<view class="center_Perpetual">
-				<tino-avatar src="../../assets/images/Frame.png" mode="widthFix" width="80rpx"/>
+				<tino-avatar :src="useImageFile('money.png')" width="80rpx" height="80rpx" />
 			</view>
 		</view>
 	</view>
 </template>
 
 <script lang="ts" setup>
+
+import { useImageFile } from '@/hooks'
 
 </script>
 

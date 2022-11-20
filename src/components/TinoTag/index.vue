@@ -4,7 +4,7 @@
       paddingRight: closable ? '28rpx' : '',
       ...useColor(store.prefix, 'tag', color || '', false).value
     }"
-    :class="[ useNamespace, useSize, useTheme, `is-${effect}` ]"
+    :class="[ namespace, useSize, useTheme, `is-${effect}` ]"
     v-show="visable"
   >
     <!-- 自定义前置图标 -->
@@ -31,6 +31,7 @@
 <script lang="ts" setup>
 
 import { useColor } from '@/hooks'
+import { useNamespace } from '@/hooks'
 import { useStore } from '@/pinia/config'
 import type { TagSize, TagTypes, DefineEffect } from '@/typings'
 
@@ -55,7 +56,9 @@ interface TinoProps {
   effect?: DefineEffect
 }
 
-const emits = defineEmits(['update:visable'])
+const store = useStore()
+const namespace = useNamespace('tag')
+
 const props = withDefaults(defineProps<TinoProps>(), {
   type: 'primary',
   size: 'default',
@@ -66,9 +69,7 @@ const props = withDefaults(defineProps<TinoProps>(), {
   afterClose: () => () => undefined
 })
 
-const store = useStore()
 const visable = ref(true)
-const useNamespace = computed(() => store.prefix + '-tag')
 const useTheme = computed(() => `${store.prefix}-tag--${props.type}`)
 const useSize = computed(() => props.size !== 'default' ? `is-${props.size}` : '')
 

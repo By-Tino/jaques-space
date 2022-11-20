@@ -1,0 +1,8 @@
+.#{$prefix}-form-item {
+  display: flex;
+  line-height: 60rpx;
+
+  .#{$prefix}-form-item__label {
+    font-size: 28rpx;
+  }
+}

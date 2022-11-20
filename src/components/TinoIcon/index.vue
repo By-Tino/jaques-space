@@ -1,10 +1,10 @@
 <template>
-  <text :class="[ useNamespace, `${store.prefix}-iconfont`, `tino-icon-${name}` ]" :style="{ fontSize: useSize, color }" @click="emits('click')" />
+  <text :class="[ namespace, 'tino-iconfont', `tino-icon-${name}` ]" :style="{ fontSize: useSize, color }" @click="emits('click')" />
 </template>
 
 <script lang="ts" setup>
 
-import { useStore } from '@/pinia/config'
+import { useNamespace } from '@/hooks'
 
 interface IconProps {
   // 定义 icon 的名称
@@ -19,9 +19,8 @@ const props = withDefaults(defineProps<IconProps>(), {
   size: 28
 })
 
-const store = useStore()
 const emits = defineEmits(['click'])
-const useNamespace = computed(() => store.prefix + '-icon')
+const namespace = useNamespace('icon')
 const useSize = computed(() => typeof props.size === 'number' ? props.size + 'rpx' : props.size)
 
 </script>

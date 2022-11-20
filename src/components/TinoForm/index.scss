@@ -1,0 +1,12 @@
+.#{$prefix}-form {
+  display: flex;
+
+  &.is-vertical {
+    flex-direction: column;
+  }
+
+  &.is-horizontal {
+    flex-direction: row;
+  }
+  
+}

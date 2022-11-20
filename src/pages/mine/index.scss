@@ -2,12 +2,30 @@ $row-padding: 0 30rpx;
 
 .#{$prefix}-mine {
   .#{$prefix}-mine-header {
-    display: flex;
-    flex-wrap: nowrap;
+    overflow: hidden;
     padding: $row-padding;
-    flex-direction: column;
     padding-top: calc(var(--status-bar-height) + 40rpx);
     background: linear-gradient(117.4deg, #64B9B4 0%, #68CAB1 100%);
+
+    > view {
+      display: flex;
+      flex-wrap: nowrap;
+    }
+
+    .is-login {
+      flex-direction: column;
+    }
+
+    .no-login {
+      flex-direction: row;
+      align-items: center;
+      margin-bottom: 40rpx;
+
+      navigator {
+        margin-left: 20rpx;
+        color: var(--tino-color-white);
+      }
+    }
 
     .#{$prefix}-mine-header__userinfo {
       display: flex;

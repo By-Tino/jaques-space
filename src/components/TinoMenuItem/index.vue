@@ -1,6 +1,6 @@
 <template>
-  <view :class="[ useNamespace, active === route ? 'is-active' : '' ]" :style="{ '--active-text-color': activeTextColor, '--text-color': textColor, height: useHeight }" @click="itemClick">
-    <view :class="`${useNamespace}__title`">
+  <view :class="[ namespace, active === route ? 'is-active' : '' ]" :style="{ '--active-text-color': activeTextColor, '--text-color': textColor, height: useHeight }" @click="itemClick">
+    <view :class="`${namespace}__title`">
       <!-- 自定义前置图标 -->
       <slot name="suffix-icon" v-if="suffixIcon">
         <tino-icon :name="suffixIcon" />
@@ -15,7 +15,8 @@
 </template>
 
 <script lang="ts" setup>
-import { useStore } from '@/pinia/config'
+
+import { useNamespace } from '@/hooks'
 
 interface MenuItemProps {
   // 前置图标
@@ -36,12 +37,11 @@ const props = withDefaults(defineProps<MenuItemProps>(), {
   activeTextColor: '#409EFF'
 })
 
-const store = useStore()
 const instance = getCurrentInstance()
 
 // h5 -> attrs app -> props
 const active = computed(() => instance?.parent?.props.active)
-const useNamespace = computed(() => store.prefix + '-menu-item')
+const namespace = useNamespace('menu-item')
 const useHeight = computed(() => {
   let height = props.height && props.height !== 'auto' ? props.height : instance?.parent?.props.itemHeight
   return typeof height === 'string' ? height : `${height}rpx`

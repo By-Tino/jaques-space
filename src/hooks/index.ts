@@ -1,4 +1,9 @@
+import join from 'url-join'
+import pinia from '@/pinia'
+import { useStore } from '@/pinia/config'
 import { TinyColor } from '@ctrl/tinycolor'
+
+const store = useStore(pinia)
 
 export function darken(color: TinyColor, amount = 20) {
   return color.mix('#141414', amount).toString()
@@ -45,4 +50,16 @@ export const useColor = (namespace: string, el: string, defineColor: string, dis
 
     return styles
   })
+}
+
+// 获取 assets 目录下的文件
+export const useImageFile = (name = '') => {
+  const modules = import.meta.glob('../assets/images/**/*', { eager: true })
+  const path = join('../assets/images', name)
+  return (modules[path] as { default: string })?.default
+}
+
+// 定义组件的命名空间
+export const useNamespace = (name: string) => {
+  return computed(() => store.prefix + '-' + name)
 }

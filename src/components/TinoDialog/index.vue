@@ -1,22 +1,22 @@
 <template>
-  <view :class="[ useNamespace ]" v-show="visable">
-    <view :class="[ useNamespace + '__wrapper' ]">
-      <view :class="[ useNamespace + '__wrapper_title' ]">{{ title }}</view>
-      <view :class="[ useNamespace + '__wrapper_content' ]">
+  <view :class="[ namespace ]" v-show="visable">
+    <view :class="[ namespace + '__wrapper' ]">
+      <view :class="[ namespace + '__wrapper_title' ]">{{ title }}</view>
+      <view :class="[ namespace + '__wrapper_content' ]">
         <slot>{{ content }}</slot>
       </view>
-      <view :class="[ useNamespace + '__wrapper_footer' ]">
+      <view :class="[ namespace + '__wrapper_footer' ]">
         <tino-button color="#D9E9E2" @click="emits('cancel', closeDialog)">cancel</tino-button>
         <tino-button color="#3EBDA3" @click="emits('confirm', closeDialog)">confirm</tino-button>
       </view>
     </view>
-    <view :class="[ useNamespace + '__modal' ]" v-show="showModal" @click.stop="closeDialog" />
+    <view :class="[ namespace + '__modal' ]" v-show="showModal" @click.stop="closeDialog" />
   </view>
 </template>
 
 <script lang="ts" setup>
 
-import { useStore } from '@/pinia/config'
+import { useNamespace } from '@/hooks'
 
 interface DialogProps {
   // 是否显示 dialog
@@ -33,9 +33,8 @@ interface DialogProps {
   afterClose?: () => void
 }
 
-const store = useStore()
 const emits = defineEmits(['update:visable', 'cancel', 'confirm'])
-const useNamespace = computed(() => store.prefix + '-dialog')
+const namespace = useNamespace('dialog')
 
 const props = withDefaults(defineProps<DialogProps>(), {
   visable: true,
