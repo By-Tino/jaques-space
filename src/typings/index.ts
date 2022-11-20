@@ -24,3 +24,22 @@ export type ImageStatus = 'default' | 'loading' | 'success' | 'error'
 
 // 定义 图片 的模式
 export type ImageMode = 'scaleToFill' | 'aspectFit' | 'aspectFill' | 'widthFix' | 'heightFix' | 'top' | 'bottom' | 'center' | 'left' | 'right' | 'top left' | 'top right' | 'bottom left' | 'bottom right'
+
+// 规则校验的触发方式
+export type TriggerMethods = 'change' | 'blur'
+
+// 定义表单规则
+export interface FormRules {
+  // 必填属性
+  required?: boolean
+  // 最小值
+  min?: number
+  // 最大值
+  max?: number
+  // 错误提示信息
+  message?: string
+  // 触发规则校验的时机
+  trigger?: TriggerMethods | TriggerMethods[]
+  // 自定义校验
+  validator?: (value: string, callback: Promise<string | void>) => Promise<string | void>
+}

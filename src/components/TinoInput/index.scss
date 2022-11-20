@@ -3,7 +3,7 @@
   --tino-input-border: var(--tino-border);
   --tino-input-hover-border: var(--tino-border-color-hover);
   --tino-input-focus-border: var(--tino-color-primary);
-  --tino-input-transparent-border: 0 0 0 1px transparent inset;
+  --tino-input-transparent-border: 0 0 0 2rpx transparent inset;
   --tino-input-border-color: var(--tino-border-color);
   --tino-input-border-radius: var(--tino-border-radius-base);
   --tino-input-bg-color: var(--tino-fill-color-blank);
@@ -17,6 +17,7 @@
   .#{$prefix}-input__wrapper {
     padding: 0 20rpx;
     font-size: 28rpx;
+    box-sizing: border-box;
     height: var(--tino-input-height);
     border: var(--tino-input-border);
     background-color: var(--tino-input-bg-color);
@@ -29,6 +30,10 @@
       .input-placeholder {
         color: var(--tino-input-placeholder-color);
       }
+    }
+
+    &.#{$prefix}-input__wrapper_focus {
+      border: 4rpx solid var(--tino-input-focus-border-color);
     }
   }
 }

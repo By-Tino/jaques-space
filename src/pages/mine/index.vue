@@ -46,7 +46,7 @@
 		v-model:visable="showUpdateUsername"
 		@confirm="updateUsername"
 	>
-		<tino-input placeholder="Jaques Tino" />
+		<tino-input placeholder="Jaques Tino" v-model="username" />
 	</tino-dialog>
 </template>
 
@@ -56,6 +56,7 @@ import { useStore } from '@/pinia/config'
 import LayoutMain from '@/layout/main/index.vue'
 
 const store = useStore()
+const username = ref('')
 const showUpdateUsername = ref(false)
 const useNamespace = computed(() => store.prefix + '-mine')
 
