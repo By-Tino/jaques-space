@@ -28,7 +28,7 @@
 			<view :class="[ useNamespace + '-header__vip' ]">
 				<view :class="[ useNamespace + '-header__vip_title' ]">VIP</view>
 				<view :class="[ useNamespace + '-header__vip_desc' ]">No member has been opened</view>
-				<tino-button color="#3EBDA3" :border="false">To Open</tino-button>
+				<tino-button color="#3EBDA3" :border="false" @click="vip">To Open</tino-button>
 			</view>
 		</view>
 		<tino-menu direction="vertical" item-height="120rpx" :class="[ useNamespace + '-main' ]">
@@ -67,6 +67,12 @@ const logout = () => {
 // 更新用户名
 const updateUsername = () => {
 
+}
+
+const vip = () => {
+	uni.navigateTo({
+		url:"/pages/member/index"
+	})
 }
 
 </script>

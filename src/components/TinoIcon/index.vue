@@ -1,5 +1,5 @@
 <template>
-  <text :class="[ useNamespace, `${store.prefix}-iconfont`, `tino-icon-${name}` ]" :style="{ fontSize: size + 'rpx', color }" @click="emits('click')" />
+  <text :class="[ useNamespace, `${store.prefix}-iconfont`, `tino-icon-${name}` ]" :style="{ fontSize: useSize, color }" @click="emits('click')" />
 </template>
 
 <script lang="ts" setup>
@@ -10,18 +10,19 @@ interface IconProps {
   // 定义 icon 的名称
   name: string
   // 定义 icon 的字体大小
-  size?: number
+  size?: number | string 
   // 定义 icon 的字体颜色
   color?: string
 }
 
-withDefaults(defineProps<IconProps>(), {
+const props = withDefaults(defineProps<IconProps>(), {
   size: 28
 })
 
 const store = useStore()
 const emits = defineEmits(['click'])
 const useNamespace = computed(() => store.prefix + '-icon')
+const useSize = computed(() => typeof props.size === 'number' ? props.size + 'rpx' : props.size)
 
 </script>
 
