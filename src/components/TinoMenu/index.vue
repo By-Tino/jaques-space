@@ -1,7 +1,7 @@
 <template>
   <view
     :class="[ useNamespace, `is-${direction}` ]"
-    :style="{ height }"
+    :style="{ height: useHeight }"
     :active="active"
   >
     <slot />
@@ -18,15 +18,22 @@ interface MenuProps {
   // menu 的高度
   height?: number | string
   // 当前活跃状态下的菜单项
-  active: string
+  active?: string
+  // 统一设置 menuitem 的高度
+  itemHeight?: string | number
+  // 是否显示箭头
+  showArrow?: boolean
 }
 
 const props = withDefaults(defineProps<MenuProps>(), {
-  direction: 'horizontal',
-  height: 'auto'
+  height: 'auto',
+  showArrow: true,
+  itemHeight: 'auto',
+  direction: 'horizontal'
 })
 
 const store = useStore()
+const useHeight = computed(() => typeof props.height === 'number' ? props.height + 'rpx' : props.height)
 const useNamespace = store.prefix + '-menu'
 
 </script>

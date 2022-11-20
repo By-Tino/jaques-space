@@ -1,5 +1,5 @@
 .layout-main {
   .#{$prefix}-menu {
-    @include define-position(fixed, lb);
+    @include define-position(lb, fixed);
   }
 }

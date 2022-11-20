@@ -62,8 +62,8 @@ const props = withDefaults(defineProps<TinoProps>(), {
   closable: false,
   visable: true,
   effect: 'dark',
-  beforeClose: () => true,
-  afterClose: () => undefined
+  beforeClose: () => () => true,
+  afterClose: () => () => undefined
 })
 
 const store = useStore()

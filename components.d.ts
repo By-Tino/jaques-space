@@ -9,8 +9,11 @@ declare module '@vue/runtime-core' {
   export interface GlobalComponents {
     RouterLink: typeof import('vue-router')['RouterLink']
     RouterView: typeof import('vue-router')['RouterView']
+    TinoAvatar: typeof import('./src/components/TinoAvatar/index.vue')['default']
     TinoButton: typeof import('./src/components/TinoButton/index.vue')['default']
+    TinoDialog: typeof import('./src/components/TinoDialog/index.vue')['default']
     TinoIcon: typeof import('./src/components/TinoIcon/index.vue')['default']
+    TinoInput: typeof import('./src/components/TinoInput/index.vue')['default']
     TinoMenu: typeof import('./src/components/TinoMenu/index.vue')['default']
     TinoMenuItem: typeof import('./src/components/TinoMenuItem/index.vue')['default']
     TinoTag: typeof import('./src/components/TinoTag/index.vue')['default']

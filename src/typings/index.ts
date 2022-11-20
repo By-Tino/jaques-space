@@ -18,3 +18,9 @@ export type ButtonTypes = 'default' | 'primary' | 'success' | 'warning' | 'error
 
 // button 的大小值类型
 export type ButtonSize = DefineSize
+
+// 定义 图片 加载状态值类型
+export type ImageStatus = 'default' | 'loading' | 'success' | 'error'
+
+// 定义 图片 的模式
+export type ImageMode = 'scaleToFill' | 'aspectFit' | 'aspectFill' | 'widthFix' | 'heightFix' | 'top' | 'bottom' | 'center' | 'left' | 'right' | 'top left' | 'top right' | 'bottom left' | 'bottom right'

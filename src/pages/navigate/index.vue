@@ -1,10 +1,13 @@
 <template>
-	<view class="navigate">
-		navigate
-	</view>
+	<layout-main namespace="navigate">
+		Navigate
+	</layout-main>
 </template>
 
-<script setup lang="ts">
+<script lang="ts" setup>
+
+import LayoutMain from '@/layout/main/index.vue'
+
 </script>
 
 <style>

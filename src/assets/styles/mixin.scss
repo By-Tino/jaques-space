@@ -1,4 +1,4 @@
-@mixin define-position ($mode: absolute, $p: center) {
+@mixin define-position ($p: center, $mode: absolute) {
   position: $mode;
 
   @if $p == center {
@@ -25,5 +25,17 @@
   @else if $p == rb {
     right: 0;
     bottom: 0;
+  }
+
+  @else if $p == ct {
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+
+  @else if $p == cb {
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
   }
 }

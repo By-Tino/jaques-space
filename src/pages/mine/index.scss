@@ -1,0 +1,96 @@
+$row-padding: 0 30rpx;
+
+.#{$prefix}-mine {
+  .#{$prefix}-mine-header {
+    display: flex;
+    flex-wrap: nowrap;
+    padding: $row-padding;
+    flex-direction: column;
+    padding-top: calc(var(--status-bar-height) + 40rpx);
+    background: linear-gradient(117.4deg, #64B9B4 0%, #68CAB1 100%);
+
+    .#{$prefix}-mine-header__userinfo {
+      display: flex;
+      align-items: center;
+      margin-bottom: 60rpx;
+      justify-content: space-between;
+
+      .#{$prefix}-mine-header__userinfo_name {
+        font-size: 40rpx;
+        font-weight: bold;
+        line-height: 64rpx;
+        margin-bottom: 30rpx;
+        color: var(--tino-color-white);
+      }
+
+      .#{$prefix}-tag {
+        font-size: 24rpx;
+        color: var(--tino-color-white);
+      }
+
+      .#{$prefix}-mine-header__userinfo_id {
+        font-size: 28rpx;
+        line-height: 44rpx;
+        margin-left: 20rpx;
+        color: var(--tino-color-white);
+      }
+    }
+
+    .#{$prefix}-mine-header__otherinfo {
+      display: flex;
+      margin-bottom: 40rpx;
+
+      > view:not(:last-child) {
+        margin-right: 40rpx;
+      }
+
+      > view {
+        text-align: center;
+        color: var(--tino-color-white);
+
+        .num {
+          font-weight: 700;
+          font-size: 40rpx;
+        }
+
+        .type {
+          color: #E7FEFC;
+          font-size: 28rpx;
+        }
+      }
+    }
+
+    .#{$prefix}-mine-header__vip {
+      color: #fff;
+      display: flex;
+      height: 100rpx;
+      align-items: center;
+      padding: $row-padding;
+      background-color: #fff;
+      justify-content: space-between;
+      border-radius: 12px 12px 0px 0px;
+      background: linear-gradient(90deg, #202639 0%, #414A65 98.25%);
+
+      .#{$prefix}-mine-header__vip_title {
+        color: #F3CC96;
+        font-size: 40rpx;
+        font-weight: bold;
+      }
+
+      .#{$prefix}-mine-header__vip_desc {
+        font-size: 28rpx;
+      }
+
+      .#{$prefix}-button {
+        color: inherit;
+        font-size: 28rpx;
+        padding: 8rpx 20rpx;
+      }
+    }
+  }
+
+  .#{$prefix}-mine-main {
+    padding: 0 40rpx;
+    box-sizing: border-box;
+  }
+}

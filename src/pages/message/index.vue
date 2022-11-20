@@ -1,10 +1,13 @@
 <template>
-	<view class="message">
-		message
-	</view>
+	<layout-main namespace="message">
+		Message
+	</layout-main>
 </template>
 
-<script setup lang="ts">
+<script lang="ts" setup>
+
+import LayoutMain from '@/layout/main/index.vue'
+
 </script>
 
 <style>

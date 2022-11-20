@@ -1,4 +1,10 @@
 .#{$prefix}-menu-item {
-  flex: 1;
+  display: flex;
   font-size: 24rpx;
+  color: var(--text-color);
+  justify-content: space-between;
+
+  &.is-active {
+    color: var(--active-text-color);
+  }
 }

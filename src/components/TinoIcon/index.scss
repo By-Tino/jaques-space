@@ -1,9 +1,9 @@
 @font-face {
   font-family: "tino-iconfont"; /* Project id 3777985 */
   /* app 里面必须携带协议号 https */
-  src: url('https://at.alicdn.com/t/c/font_3777985_5jjyv4sl078.woff2?t=1668843823346') format('woff2'),
-       url('https://at.alicdn.com/t/c/font_3777985_5jjyv4sl078.woff?t=1668843823346') format('woff'),
-       url('https://at.alicdn.com/t/c/font_3777985_5jjyv4sl078.ttf?t=1668843823346') format('truetype');
+  src: url('https://at.alicdn.com/t/c/font_3777985_2nhvmyfhd26.woff2?t=1668913402420') format('woff2'),
+       url('https://at.alicdn.com/t/c/font_3777985_2nhvmyfhd26.woff?t=1668913402420') format('woff'),
+       url('https://at.alicdn.com/t/c/font_3777985_2nhvmyfhd26.ttf?t=1668913402420') format('truetype');
 }
 
 .tino-iconfont {
@@ -12,6 +12,22 @@
   font-style: normal;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+}
+
+.tino-icon-image-load-error:before {
+  content: "\e813";
+}
+
+.tino-icon-sex-female:before {
+  content: "\e611";
+}
+
+.tino-icon-sex-male:before {
+  content: "\e895";
+}
+
+.tino-icon-right-light:before {
+  content: "\e642";
 }
 
 .tino-icon-licai:before {

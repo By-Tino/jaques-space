@@ -1,6 +1,6 @@
 <template>
 	<LayoutMain namespace="home">
-		<tino-tag suffix-icon="user">21</tino-tag>
+		Home
 	</LayoutMain>
 </template>
 

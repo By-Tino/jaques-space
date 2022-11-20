@@ -1,6 +1,9 @@
 {
 	"pages": [
 		{
+			"path": "pages/mine/index"
+		},
+		{
 			"path": "pages/home/index"
 		},
 		{
@@ -8,9 +11,6 @@
 		},
 		{
 			"path": "pages/message/index"
-		},
-		{
-			"path": "pages/mine/index"
 		},
 		{
 			"path": "pages/mine/edit"

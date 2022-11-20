@@ -1,0 +1,24 @@
+.#{$prefix}-avatar {
+  position: relative;
+  display: inline-block;
+  --tino-avatar-text-size: 40rpx;
+  --tino-avatar-text-color: var(--tino-color-white);
+  --tino-avatar-bg-color: var(--tino-text-color-disabled);
+
+  image {
+    vertical-align: top;
+  }
+
+  .#{$prefix}-avatar__error {
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    position: absolute;
+    align-items: center;
+    justify-content: center;
+    color: var(--tino-avatar-text-color);
+    background: var(--tino-avatar-bg-color);
+  }
+}
