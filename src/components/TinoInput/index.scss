@@ -22,6 +22,16 @@
     border: var(--tino-input-border);
     background-color: var(--tino-input-bg-color);
     border-radius: var(--tino-input-border-radius);
+    display: flex;
+    align-items: center;
+
+    .suffix-icon {
+      margin-right: 10rpx;
+    }
+
+    .prefix-icon {
+      margin-left: 10rpx;
+    }
 
     :deep(input) {
       width: 100%;
@@ -42,8 +52,8 @@
   }
 
   .#{$prefix}-input__error {
-    line-height: 60rpx;
+    line-height: 1.5;
     color: #DA3F70;
-    font-size: 1rem;
+    font-size: 24rpx;
   }
 }

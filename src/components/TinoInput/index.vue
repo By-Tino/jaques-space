@@ -1,14 +1,36 @@
 <template>
   <view :class="[ namespace ]">
     <view :class="[ namespace + '__wrapper', isFocus ? `${namespace + '__wrapper'}_focus`: '', !!errmsg ? `${useNamespace + '__wrapper'}_error` : '' ]">
+      <view class="suffix-icon" >
+        <slot name="suffix-icon">
+          <tino-icon :name="suffixIcon" v-if="suffixIcon" />
+        </slot>
+      </view>
       <input
         type="text"
         v-model="inputValue"
+        v-show="type === 'password'"
+        :placeholder="placeholder"
+        :password="showPassword"
+        @focus="isFocus = true"
+        @blur="handleBlur"
+        @input="handleInput"
+      />
+      <input
+        type="text"
+        v-model="inputValue"
+        v-show="type === 'text'"
         :placeholder="placeholder"
         @focus="isFocus = true"
         @blur="handleBlur"
         @input="handleInput"
       />
+      <view class="prefix-icon">
+        <slot name="prefix-icon">
+          <tino-icon :name="prefixIcon || 'eyes-open'" v-if="$props.type === 'password'" @click="type = (type === 'text' ? 'password' : 'text')" />
+          <tino-icon :name="prefixIcon" v-else-if="prefixIcon && $props.type === 'text'" />
+        </slot>
+      </view>
     </view>
     <view :class="[ namespace + '__error' ]" v-show="showError && !!errmsg">
       <slot name="error" :errmsg="errmsg">
@@ -23,7 +45,7 @@
 
 import { GET_TYPE } from '@/utils'
 import { useNamespace } from '@/hooks'
-import { FormRules, TriggerMethods } from '@/typings'
+import { FormRules, TriggerMethods, AllFormRules } from '@/typings'
 
 interface InputProps {
   // 提示性文本
@@ -36,22 +58,36 @@ interface InputProps {
   trigger?: TriggerMethods
   // 是否显示错误信息
   showError?: boolean
+  // 前置图标
+  suffixIcon?: string
+  // 后置图标
+  prefixIcon?: string
+  // 输入框类型
+  type?: 'text' | 'password'
+  // 是否显示明文
+  showPassword?: boolean
 }
 
-const isFocus = ref(false)
-const inputValue = ref('')
-const errmsg = ref('')
-const useBlurRules = ref<FormRules []>([])
-const useChangeRules = ref<FormRules []>([])
-const emits = defineEmits(['update:modelValue'])
+const instance = getCurrentInstance()
 const namespace = useNamespace('input')
+const emits = defineEmits(['update:modelValue'])
 
 const props = withDefaults(defineProps<InputProps>(), {
   placeholder: '',
   modelValue: '',
   trigger: 'blur',
-  showError: true
+  showError: true,
+  type: 'text',
+  showPassword: false
 })
+
+const errmsg = ref('')
+const inputValue = ref('')
+const isFocus = ref(false)
+const type = ref(props.type)
+const showPlaceholder = ref(true)
+const useBlurRules = ref<FormRules []>([])
+const useChangeRules = ref<FormRules []>([])
 
 const handleResponse = (errmsg?: string): Promise<boolean> => new Promise(resolve => {
     resolve(!errmsg)
@@ -92,6 +128,7 @@ const checkRules = async (routes: FormRules[]) => {
 
 const handleBlur = async () => {
   isFocus.value = false
+  showPlaceholder.value = true
   // 规则校验
   checkRules(useBlurRules.value)
 }
@@ -102,8 +139,15 @@ const handleInput = () => {
   checkRules(useChangeRules.value)
 }
 
+const handleFocus = () => {
+  isFocus.value = true
+  showPlaceholder.value = false
+}
+
 onMounted(() => {
-  const rules = props.rules
+  const allRules = instance?.parent?.parent?.props.rules as AllFormRules
+  const ruleProp = instance?.parent?.props.prop as string
+  const rules = props.rules || ( allRules && ruleProp && allRules[ruleProp])
   
   if (!!rules) {
     const type = GET_TYPE(rules)

@@ -4,5 +4,9 @@
     margin: 0 auto;
     max-width: 560rpx;
     margin-top: 100rpx;
+
+    .#{$prefix}-form-item {
+      line-height: 80rpx;
+    }
   }
 }

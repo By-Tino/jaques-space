@@ -1,7 +1,9 @@
 import join from 'url-join'
 import pinia from '@/pinia'
+import { FormRules } from '@/typings'
 import { useStore } from '@/pinia/config'
 import { TinyColor } from '@ctrl/tinycolor'
+import type { FormErrors } from '@/typings'
 
 const store = useStore(pinia)
 
@@ -62,4 +64,51 @@ export const useImageFile = (name = '') => {
 // 定义组件的命名空间
 export const useNamespace = (name: string) => {
   return computed(() => store.prefix + '-' + name)
+}
+
+const handleResponse = (errmsg?: string): Promise<boolean> => new Promise(resolve => {
+  resolve(!errmsg)
+})
+
+/**
+ * 表单验证
+ * @param prop 需要验证的属性
+ * @param value 需要验证的属性值
+ * @param rules 采用的表单规则
+ * @returns [验证结果, 错误结果集]
+ */
+export const useValidate = async (field: string, value: string, rules: FormRules[]): Promise<[boolean, FormErrors]> => {
+  const errors: FormErrors = {
+    field,
+    value,
+    errors: []
+  }
+  for (const rule of rules) {
+    const validator = rule.validator
+    if (!!validator && typeof validator === 'function') {
+      const result = await validator(value, handleResponse)
+      if (!result) {
+        errors.errors.push(rule.message)
+      }
+    }
+    else {
+      const keys = Object.keys(rule)
+      const result = keys.every(key => {
+        switch (key) {
+          case 'min':
+            return value.length >= (rule[key] as number)
+          case 'max':
+            return value.length <= (rule[key] as number)
+          case 'required':
+            return !rule[key] || value.length > 0
+          default:
+            return true
+        }
+      })
+      if (!result) {
+        errors.errors.push(rule.message)
+      }
+    }
+  }
+  return [Object.keys(errors.errors).length <= 0, errors]
 }

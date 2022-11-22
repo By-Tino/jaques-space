@@ -17,6 +17,8 @@ import { VALID_CSS_VALUE } from '@/utils'
 interface FormItemProps {
   // 表单项的标题文本
   label?: string
+  // 表单项需要绑定的规则属性
+  prop?: string
   // 表单项的宽度设定
   labelWidth?: string | number
 }

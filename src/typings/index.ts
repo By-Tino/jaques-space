@@ -44,8 +44,20 @@ export interface FormRules {
   validator?: (value: string, callback: Function) => Promise<boolean>
 }
 
+export interface AllFormRules {
+  // 需要被检测的表单项
+  [prop: string]: FormRules | FormRules[]
+}
+
 // 定义位置
 export type Position = 'top' | 'left' | 'center' | 'right'
 
 // 排列方式
 export type Alignment = 'horizontal' | 'vertical'
+
+// 表单错误对象类型定义
+export interface FormErrors {
+  field: string
+  value: string
+  errors: string[]
+}
