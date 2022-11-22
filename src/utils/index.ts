@@ -19,7 +19,7 @@ export const SEND_SMS = (phones: string[], message: string) => {
 
 // #endif
 
-// 获取数据的类型
+// 获取数据的类型 GET_TYPE(1)
 export const GET_TYPE = (data: any) => {
   let type: string = typeof data
   if (type === 'object') type = Object.prototype.toString.call(data).replace(/^\[object (\S+)\]$/, '$1').toLowerCase()

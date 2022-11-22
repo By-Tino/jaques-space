@@ -20,6 +20,9 @@
 		},
 		{
 			"path": "pages/login/index"
+		},
+		{
+			"path": "pages/mine/cv/index"
 		}
 	],
 	"globalStyle": {

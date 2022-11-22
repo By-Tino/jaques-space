@@ -32,6 +32,7 @@
 <script lang="ts" setup>
 
 import { useNamespace } from '@/hooks'
+import { SEND_SMS } from '@/utils'
 
 const namespace = useNamespace('login')
 

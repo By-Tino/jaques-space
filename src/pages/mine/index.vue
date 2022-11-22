@@ -69,7 +69,7 @@ import { useImageFile } from '@/hooks'
 import LayoutMain from '@/layout/main/index.vue'
 
 const store = useStore()
-const user = ref(null)
+const user = ref({})
 const username = ref('')
 const showUpdateUsername = ref(false)
 const useNamespace = computed(() => store.prefix + '-mine')

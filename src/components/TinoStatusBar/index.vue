@@ -12,7 +12,7 @@ interface StatusBarProps {
 
 const namespace = useNamespace('status-bar')
 const props = withDefaults(defineProps<StatusBarProps>(), {
-  color: 'white'
+  color: '#000'
 })
 
 </script>
