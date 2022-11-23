@@ -3,7 +3,6 @@
     :class="[ namespace ]"
   >
     <tino-status-bar />
-    <tino-navigator>Resume</tino-navigator>
   </view>
 </template>
 
