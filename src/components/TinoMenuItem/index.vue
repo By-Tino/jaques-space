@@ -1,5 +1,5 @@
 <template>
-  <view :class="[ namespace, active === route ? 'is-active' : '' ]" :style="{ '--active-text-color': activeTextColor, '--text-color': textColor, height: useHeight }" @click="itemClick">
+  <view :class="[ namespace, active === route ? 'is-active' : '' ]" :style="{ '--active-text-color': activeTextColor, '--text-color': textColor, height: useHeight, '--tino-menu-hover-bg-color': 'var(--tino-color-info-light-9)' }" @click="itemClick">
     <view :class="`${namespace}__title`">
       <!-- 自定义前置图标 -->
       <slot name="suffix-icon" v-if="suffixIcon">
@@ -51,7 +51,7 @@ const itemClick = () => {
   if (props.route && typeof props.route === 'string') {
     uni.navigateTo({
       url: props.route,
-      animationType: 'fade-in',
+      animationType: instance?.parent?.props.direction === 'horizontal' ? 'fade-in' : 'slide-in-right',
       animationDuration: 300
     })
     return

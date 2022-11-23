@@ -8,11 +8,17 @@ import { useNamespace } from '@/hooks'
 
 interface StatusBarProps {
   color?: string
+  statusColor?: '#ffffff' | '#000000'
 }
 
 const namespace = useNamespace('status-bar')
 const props = withDefaults(defineProps<StatusBarProps>(), {
-  color: '#000'
+  color: '#ffffff',
+  statusColor: '#000000'
+})
+
+uni.setNavigationBarColor({
+  frontColor: props.statusColor
 })
 
 </script>

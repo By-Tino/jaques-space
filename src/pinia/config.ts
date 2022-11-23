@@ -1,12 +1,16 @@
-import { prefix } from '@/config'
+import { prefix, statusBarColor } from '@/config'
 
 export const useStore = defineStore('config', {
   state: () => ({
-    prefix
+    prefix,
+    statusBarColor
   }),
   actions: {
     setPrefix (prefix: string) {
       this.prefix = prefix
+    },
+    setStatusBarColor (color: string) {
+      this.statusBarColor = color
     }
   }
 })

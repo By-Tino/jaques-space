@@ -1,9 +1,9 @@
 @font-face {
   font-family: "tino-iconfont"; /* Project id 3777985 */
   /* app 里面必须携带协议号 https */
-  src: url('https://at.alicdn.com/t/c/font_3777985_cyjbpdls9eu.woff2?t=1669001103369') format('woff2'),
-       url('https://at.alicdn.com/t/c/font_3777985_cyjbpdls9eu.woff?t=1669001103369') format('woff'),
-       url('https://at.alicdn.com/t/c/font_3777985_cyjbpdls9eu.ttf?t=1669001103369') format('truetype');
+  src: url('https://at.alicdn.com/t/c/font_3777985_7jp7ekowuhn.woff2?t=1669105689985') format('woff2'),
+       url('https://at.alicdn.com/t/c/font_3777985_7jp7ekowuhn.woff?t=1669105689985') format('woff'),
+       url('https://at.alicdn.com/t/c/font_3777985_7jp7ekowuhn.ttf?t=1669105689985') format('truetype');
 }
 
 .tino-iconfont {
@@ -12,6 +12,10 @@
   font-style: normal;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+}
+
+.tino-icon-left-light:before {
+  content: "\e629";
 }
 
 .tino-icon-eyes-open:before {

@@ -1,10 +1,11 @@
 <template>
   <view class="layout-main">
-    <view :class="[ useNamespace ]" :style="{ paddingTop: useStatusBar ? 0 : 'var(--status-bar-height)' }">
+    <tino-status-bar :color="store.statusBarColor" />
+    <view :class="[ useNamespace ]">
       <slot />
     </view>
     <tino-menu
-      :height="100"
+      :height="98"
       :active="`/pages/${namespace}/index`"
     >
       <tino-menu-item suffix-icon="home" route="/pages/home/index">Home</tino-menu-item>
@@ -22,13 +23,9 @@ import { useStore } from '@/pinia/config'
 interface LayoutProps {
   // 命名空间
   namespace: string
-  // 是否需要操作 状态栏
-  useStatusBar?: boolean
 }
 
-const props = withDefaults(defineProps<LayoutProps>(), {
-  useStatusBar: false
-})
+const props = withDefaults(defineProps<LayoutProps>(), {})
 
 const store = useStore()
 const useNamespace = computed(() => store.prefix + '-' + props.namespace)

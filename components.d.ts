@@ -18,6 +18,7 @@ declare module '@vue/runtime-core' {
     TinoInput: typeof import('./src/components/TinoInput/index.vue')['default']
     TinoMenu: typeof import('./src/components/TinoMenu/index.vue')['default']
     TinoMenuItem: typeof import('./src/components/TinoMenuItem/index.vue')['default']
+    TinoNavigator: typeof import('./src/components/TinoNavigator/index.vue')['default']
     TinoStatusBar: typeof import('./src/components/TinoStatusBar/index.vue')['default']
     TinoTag: typeof import('./src/components/TinoTag/index.vue')['default']
   }

@@ -108,7 +108,10 @@ $row-padding: 0 30rpx;
   }
 
   .#{$prefix}-mine-main {
-    padding: 0 40rpx;
     box-sizing: border-box;
+
+    :deep(.#{$prefix}-menu-item) {
+      padding: 0 40rpx;
+    }
   }
 }

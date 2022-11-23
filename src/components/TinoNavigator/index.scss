@@ -1,0 +1,35 @@
+.#{$prefix}-navigator {
+  display: flex;
+  font-weight: 600;
+  position: relative;
+  align-items: center;
+  justify-content: space-between;
+  height: var(--title-bar-height);
+  // background: linear-gradient(117.4deg, #64B9B4 0%, #68CAB1 100%);
+
+  .#{$prefix}-navigator__wrapper {
+    flex: 1;
+    display: flex;
+    font-size: 40rpx;
+    align-items: center;
+    text-align: center;
+
+    .#{$prefix}-navigator__wrapper_content {
+      position: absolute;
+      left: 0;
+      right: 0;
+      width: 100%;
+      height: 100%;
+      color: #fff;
+      line-height: var(--title-bar-height);
+    }
+  }
+
+  .#{$prefix}-icon {
+    width: var(--title-bar-height);
+    height: var(--title-bar-height);
+    line-height: var(--title-bar-height);
+    position: relative;
+    z-index: 2;
+  }
+}

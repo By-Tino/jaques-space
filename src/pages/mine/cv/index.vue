@@ -2,8 +2,8 @@
   <view
     :class="[ namespace ]"
   >
-    <tino-status-bar color="#000" />
-    简历
+    <tino-status-bar />
+    <tino-navigator>Resume</tino-navigator>
   </view>
 </template>
 

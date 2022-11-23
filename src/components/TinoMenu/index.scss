@@ -52,6 +52,10 @@
 
     :deep(.#{$prefix}-menu-item) {
       font-size: 28rpx;
+
+      &:active {
+        background: var(--tino-menu-hover-bg-color);
+      }
     }
   }
 }
