@@ -1,12 +1,14 @@
 <template>
 	<LayoutMain namespace="home">
-		Home
+		<tino-switch v-model="active" style="margin: 50rpx" />
 	</LayoutMain>
 </template>
 
 <script lang="ts" setup>
 
 import LayoutMain from '@/layout/main/index.vue'
+
+const active = ref(false)
 
 </script>
 
