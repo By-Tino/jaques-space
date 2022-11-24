@@ -14,7 +14,6 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
-
 .tino-icon-round-add-fill:before {
   content: "\e6d8";
 }
@@ -31,7 +30,7 @@
   content: "\e760";
 }
 
-.tino-icon-bianji1:before {
+.tino-icon-edit-solid:before {
   content: "\e649";
 }
 
@@ -51,7 +50,7 @@
   content: "\e67d";
 }
 
-.tino-icon-xunzhang:before {
+.tino-icon-sticky-top:before {
   content: "\e664";
 }
 
@@ -107,7 +106,7 @@
   content: "\e619";
 }
 
-.tino-icon-xiangji:before {
+.tino-icon-photo:before {
   content: "\e8c7";
 }
 
@@ -115,7 +114,7 @@
   content: "\e6dd";
 }
 
-.tino-icon-bianji:before {
+.tino-icon-edit:before {
   content: "\e601";
 }
 
@@ -151,15 +150,6 @@
   content: "\e67e";
 }
 
-.tino-icon-dianzan:before {
+.tino-icon-like:before {
   content: "\e8c3";
-}
-
-.tino-icon-yonghu:before {
-  content: "\e788";
-}
-
-.#{$prefix}-icon {
-  color: inherit;
-  display: inline-block;
 }
