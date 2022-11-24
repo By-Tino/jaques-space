@@ -1,9 +1,9 @@
 @font-face {
   font-family: "tino-iconfont"; /* Project id 3777985 */
   /* app 里面必须携带协议号 https */
-  src: url('https://at.alicdn.com/t/c/font_3777985_t856jnpk1zf.woff2?t=1669270752514') format('woff2'),
-       url('https://at.alicdn.com/t/c/font_3777985_t856jnpk1zf.woff?t=1669270752514') format('woff'),
-       url('https://at.alicdn.com/t/c/font_3777985_t856jnpk1zf.ttf?t=1669270752514') format('truetype');
+  src: url('https://at.alicdn.com/t/c/font_3777985_h5a5p5ofv8.woff2?t=1669273318746') format('woff2'),
+       url('https://at.alicdn.com/t/c/font_3777985_h5a5p5ofv8.woff?t=1669273318746') format('woff'),
+       url('https://at.alicdn.com/t/c/font_3777985_h5a5p5ofv8.ttf?t=1669273318746') format('truetype');
 }
 
 .tino-iconfont {
@@ -13,7 +13,6 @@
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
-
 .tino-icon-round-add-fill:before {
   content: "\e6d8";
 }
@@ -30,7 +29,7 @@
   content: "\e760";
 }
 
-.tino-icon-edit-solid:before {
+.tino-icon-edit:before {
   content: "\e649";
 }
 
@@ -94,28 +93,8 @@
   content: "\e642";
 }
 
-.tino-icon-licai:before {
-  content: "\e600";
-}
-
-.tino-icon-wenzhangliebiaoxiangqing:before {
-  content: "\e665";
-}
-
-.tino-icon-tongxingbie:before {
-  content: "\e619";
-}
-
 .tino-icon-photo:before {
   content: "\e8c7";
-}
-
-.tino-icon-meiyuan:before {
-  content: "\e6dd";
-}
-
-.tino-icon-edit:before {
-  content: "\e601";
 }
 
 .tino-icon-message:before {

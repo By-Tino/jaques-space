@@ -7,7 +7,9 @@
 import { useNamespace } from '@/hooks'
 
 interface StatusBarProps {
+  // 定义状态栏的背景色
   color?: string
+  // 定义状态栏的文字颜色（不支持更新的）
   statusColor?: '#ffffff' | '#000000'
 }
 

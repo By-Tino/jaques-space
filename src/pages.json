@@ -13,9 +13,6 @@
 			"path": "pages/message/index"
 		},
 		{
-			"path": "pages/mine/edit"
-		},
-		{
 			"path": "pages/member/index"
 		},
 		{
