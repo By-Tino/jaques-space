@@ -64,8 +64,8 @@
 
 <script lang="ts" setup>
 
-import { useStore } from '@/pinia/config'
 import { useImageFile } from '@/hooks'
+import { useStore } from '@/pinia/config'
 import LayoutMain from '@/layout/main/index.vue'
 
 const store = useStore()

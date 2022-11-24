@@ -1,6 +1,6 @@
 <template>
   <view class="layout-main">
-    <tino-status-bar :color="store.statusBarColor" />
+    <tino-status-bar :color="store.statusBarColor" statusColor="#ffffff" />
     <view :class="[ useNamespace ]">
       <slot />
     </view>

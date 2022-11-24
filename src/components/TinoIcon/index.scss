@@ -1,9 +1,9 @@
 @font-face {
   font-family: "tino-iconfont"; /* Project id 3777985 */
   /* app 里面必须携带协议号 https */
-  src: url('https://at.alicdn.com/t/c/font_3777985_7jp7ekowuhn.woff2?t=1669105689985') format('woff2'),
-       url('https://at.alicdn.com/t/c/font_3777985_7jp7ekowuhn.woff?t=1669105689985') format('woff'),
-       url('https://at.alicdn.com/t/c/font_3777985_7jp7ekowuhn.ttf?t=1669105689985') format('truetype');
+  src: url('https://at.alicdn.com/t/c/font_3777985_t856jnpk1zf.woff2?t=1669270752514') format('woff2'),
+       url('https://at.alicdn.com/t/c/font_3777985_t856jnpk1zf.woff?t=1669270752514') format('woff'),
+       url('https://at.alicdn.com/t/c/font_3777985_t856jnpk1zf.ttf?t=1669270752514') format('truetype');
 }
 
 .tino-iconfont {
@@ -12,6 +12,51 @@
   font-style: normal;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+}
+
+
+.tino-icon-round-add-fill:before {
+  content: "\e6d8";
+}
+
+.tino-icon-search:before {
+  content: "\e6a4";
+}
+
+.tino-icon-lock:before {
+  content: "\e62b";
+}
+
+.tino-icon-nav-bottom:before {
+  content: "\e760";
+}
+
+.tino-icon-bianji1:before {
+  content: "\e649";
+}
+
+.tino-icon-log-out:before {
+  content: "\e6be";
+}
+
+.tino-icon-help:before {
+  content: "\e6fb";
+}
+
+.tino-icon-order:before {
+  content: "\e7b3";
+}
+
+.tino-icon-setting:before {
+  content: "\e67d";
+}
+
+.tino-icon-xunzhang:before {
+  content: "\e664";
+}
+
+.tino-icon-address:before {
+  content: "\e7bd";
 }
 
 .tino-icon-left-light:before {
