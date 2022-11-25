@@ -20,6 +20,9 @@
 		},
 		{
 			"path": "pages/mine/cv/index"
+		},
+		{
+			"path": "pages/mine/cv/aboutme/index"
 		}
 	],
 	"globalStyle": {
