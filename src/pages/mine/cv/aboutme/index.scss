@@ -1,0 +1,129 @@
+.#{$prefix}-about{
+  .#{$prefix}-about-content{
+    padding: 40rpx 36rpx 0rpx 36rpx;
+    box-sizing: border-box;
+    .#{$prefix}-about-head{
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      width: 670rpx;
+      height: 180rpx;
+      border: 2rpx dashed #BABBCF;
+      .#{$prefix}-about-radius{
+        width: 96rpx;
+        height: 96rpx;
+        border-radius: 50%;
+        background: #131313;
+        text-align: center;
+        line-height: 96rpx;
+      }
+    }
+    .#{$prefix}-about-name{
+      position: relative;
+      .tino-input{
+        margin-top: 18rpx;
+      }
+      text{
+        position: relative;
+        top: -100rpx;
+        left: 38rpx;
+        width: 102rpx;
+        height: 38rpx;
+        background: #fff;
+        border: 4rpx solid #fff;
+        color: #666666;
+        text-align: center;
+        line-height: 38rpx;
+        font-size: 24rpx;
+      }
+    }
+    .#{$prefix}-about-radio{
+      display: flex;
+      justify-content: space-between;
+      .male{
+        width: 315rpx;
+        height: 82rpx;
+        display: flex;
+        align-items: center;
+        padding-left: 24rpx;
+        border-radius: 12rpx;
+        box-sizing: border-box;
+        background:#ECFBF6;
+        border: 2rpx solid #97D4C8;
+        .male_radio{
+          width: 32rpx;
+          height: 32rpx;
+          border-radius: 50%;
+          border: 8rpx solid #21C58B;
+          box-sizing: border-box;
+        }
+      }
+      .famale{
+        width: 315rpx;
+        height: 82rpx;
+        display: flex;
+        align-items: center;
+        padding-left: 24rpx;
+        border-radius: 12rpx;
+        box-sizing: border-box;
+        background:#F0F2F5;
+        border: 2rpx solid #666666;
+        .famale_radio{
+          width: 32rpx;
+          height: 32rpx;
+          border-radius: 50%;
+          border: 4rpx solid #666666;
+          box-sizing: border-box;
+        }
+      }
+    }
+    .#{$prefix}-about-day{
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-top: 58rpx;
+      view:nth-child(1){
+        display: inline-flex;
+        font-size: 28rpx;
+        color: #666666;
+        padding: 28rpx 44rpx;
+        border-radius: 10rpx;
+        border: 2rpx solid #BABBCF;
+      }
+      view:nth-child(2){
+        display: inline-flex;
+        font-size: 28rpx;
+        color: #666666;
+        padding: 28rpx 40rpx;
+        border-radius: 10rpx;
+        border: 2rpx solid #BABBCF;
+      }
+      view:nth-child(3){
+        display: inline-flex;
+        font-size: 28rpx;
+        color: #666666;
+        padding: 28rpx 58rpx;
+        border-radius: 10rpx;
+        border: 2rpx solid #BABBCF;
+      }
+    }
+    .#{$prefix}-about-footer{
+     width: 100%;
+     bottom: 0;
+     left: 0;
+     height: 120rpx;
+     padding: 20rpx 40rpx;
+     box-sizing: border-box;
+     position: fixed;
+     border-top: 2rpx solid #EAEAEA;
+     .tino-button{
+      width: 667.62rpx;
+      height: 80rpx;
+      color: #fff;
+      font-weight: 700;
+      line-height: 60rpx;
+     }
+    }
+  }
+}
